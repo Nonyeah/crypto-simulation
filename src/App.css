@@ -444,6 +444,14 @@ padding: 16px 0;
   cursor: pointer;
 }
 
+.markets-container .arrow-up::after {
+  content: '\2191';
+}
+
+.markets-container .arrow-down::after{
+  content: '2193';
+}
+
 .coin-container{
   margin: 30px;
  
@@ -755,10 +763,6 @@ justify-content: space-between;
     font-size: 1rem;
   }
 
-  .markets-container .buttons-container {
-    justify-content: space-between;
-    
-  }
 
   .buttons-container li button{
     font-size: 0.8rem;
