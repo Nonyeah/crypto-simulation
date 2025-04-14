@@ -445,11 +445,11 @@ padding: 16px 0;
 }
 
 .markets-container .arrow-up::after {
-  content: '\2191';
+  content: '\25BC';
 }
 
 .markets-container .arrow-down::after{
-  content: '2193';
+  content: '\25B2';
 }
 
 .coin-container{
