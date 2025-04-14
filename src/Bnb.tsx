@@ -72,7 +72,7 @@ export default function Bnb() {
 function DisplayListBlock({ id, labelName, content }: MainTopNav) {
   const [showpanel, setshowpanel] = useState<boolean>(false);
   return (
-    <li
+    <li 
       onMouseOver={() => setshowpanel(true)}
       onMouseOut={() => setshowpanel(false)}
       key={id}
