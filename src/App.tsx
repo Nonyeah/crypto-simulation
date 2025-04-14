@@ -5,6 +5,7 @@ import Dashboard from "./Dashboard";
 import Home from "./Home";
 import Balance from "./Balance";
 import Markets from "./Markets";
+import Error404 from "./404Error";
 import Doge from "./Doge";
 import Bnb from "./Bnb";
 import Btc from "./Btc";
@@ -32,6 +33,7 @@ function App() {
         <Route path="Doge" element={<Doge />} />
         <Route path="Xrp" element={<Xrp />} />
         <Route path="Sol" element={<Sol />} />
+        <Route path="*" element={<Error404 />} />
       </Route>
     </Routes>
   );
