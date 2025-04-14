@@ -382,7 +382,7 @@ margin: 20px 0;
 
 .markets-container h4{
   font-size: 1.2rem;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .markets-container .buttons-container {
@@ -774,6 +774,26 @@ justify-content: space-between;
     width: 100%;
     
   }
+
+
+  
+.balance-container .static-buttons {
+  display: flex;
+  justify-content: space-betwen;
+  margin: 30px 15px;;
+}
+
+
+.fund-account ul {
+
+  justify-content: space-between;
+}
+
+.fund-account .fund-tab-buttons {
+  padding: 16px 10px;
+  margin: 20px 15px;
+
+}
   
 .markets-content table {
   border-spacing: 5px;
@@ -797,12 +817,7 @@ justify-content: space-between;
 
   }
 
-  .markets-content td{
-    font-size: 0.9rem;
-  }
-  .markets-content th{
-    font-size: 0.8rem;
-  }
+  
 
   .chart-description table{
     border-spacing: 10px;
