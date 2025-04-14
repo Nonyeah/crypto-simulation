@@ -308,6 +308,9 @@ margin: 20px 0;
   border-radius: 5px;
   font-size: 1rem;
 }
+.balance-container p.currency button::after{
+  content: '\25BC';
+}
 
 .select-crypto-container {
   border-radius: 15px;
