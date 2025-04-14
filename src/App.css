@@ -376,7 +376,7 @@ margin: 20px 0;
 }
 
 .markets-container{
- margin: 20px;
+ margin: 20px 10px;
  border: 1px solid grey; 
  border-radius: 20px;
  padding: 16px;
@@ -420,7 +420,7 @@ margin: 20px 0;
 
 .markets-content td, th{
 padding: 16px 0;
-  width: 25%;
+  width: 24%;
   text-align: center;
   text-transform: uppercase;
 }
@@ -804,6 +804,7 @@ justify-content: space-between;
   
 .markets-content table {
   border-spacing: 5px;
+  margin-left: -10px;
 }
 
 .markets-content td, th{
