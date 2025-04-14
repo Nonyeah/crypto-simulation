@@ -42,7 +42,7 @@ export default function Balance() {
           <p className="currency">
             <span className="amount">0.00</span>{" "}
             <span className="coin">{coin}</span>{" "}
-            <button type="button"> &#129171;</button>
+            <button type="button"></button>
           </p>
           <p className="currency"> &#8776; £0.00 </p>
           <p className="text">
@@ -76,7 +76,7 @@ export default function Balance() {
           <p className="currency">
             <span className="amount">0.00</span>{" "}
             <span className="coin">{coin}</span>{" "}
-            <button type="button"> &#11167;</button>
+            <button type="button"> </button>
           </p>
           <p className="currency"> &#8776; £0.00 </p>
           <p>
