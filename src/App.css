@@ -714,8 +714,12 @@ justify-content: space-between;
 
 .error-container p{
   text-align: center;
-  font-size: 1.2rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.1rem;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.error-container .previous{
+  margin: 50px;
 }
 
 
@@ -934,6 +938,21 @@ padding: 10px;
     width: 100%;
     margin: 20px 0;
     
+  }
+
+  .error-container {
+    margin: 20px;
+    border: 1px solid grey; 
+    border-radius: 10px;
+    padding: 16px;
+  }
+
+  .error-container p{
+    margin: 40px 20px;
+    font-size: 1rem;
+    text-align: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
   }
 
 
