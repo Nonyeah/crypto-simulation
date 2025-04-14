@@ -112,7 +112,6 @@ export default function Balance() {
             <span className="coin">{coin}</span>{" "}
             <button onClick={() => setshowcurrency(true)} type="button">
               {" "}
-             
             </button>
           </p>
           <p className="currency"> &#8776; £0.00 </p>

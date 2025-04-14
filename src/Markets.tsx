@@ -79,15 +79,14 @@ function CryptoTable({
     return (
       <th key={headercell.id}>
         <span>{headercell.label}</span>
-        <span className="arrow-up" onClick={() => sortAscending(headercell.id)}>
-       
-        </span>
+        <span
+          className="arrow-up"
+          onClick={() => sortAscending(headercell.id)}
+        ></span>
         <span
           className="arrow-down"
           onClick={() => sortDescending(headercell.id)}
-        >
-         
-        </span>
+        ></span>
       </th>
     );
   });
@@ -121,12 +120,12 @@ function CryptoTable({
           <tr>{header}</tr>
         </thead>
         <tbody className="string-content">
-        
-             <tr>
-              <td className="string-only">  <p>{contentArray}</p></td>
-             </tr>
-              
-             
+          <tr>
+            <td className="string-only">
+              {" "}
+              <p>{contentArray}</p>
+            </td>
+          </tr>
         </tbody>
       </table>
     );
