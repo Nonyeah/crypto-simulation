@@ -605,14 +605,13 @@ font-family:"Arial, Helvetica, sans-serif";
   padding: 16px;
   background-color: #3a3838;
   color: #fff;
-  display:inline-block;
   font: 0.7rem arial;
   position: absolute;
   bottom: 100%;
   left: 40%;
   margin-left: -60px;
  display:none;
-    width: 100%;
+    width: auto;
     height: auto;
   z-index: 1;
 
@@ -637,6 +636,7 @@ font-family:"Arial, Helvetica, sans-serif";
 .left-container .hidetip {
   display:none;
 }
+
 
 
 .chart-outside-cover .mini-chart {
@@ -798,10 +798,9 @@ justify-content: space-between;
   margin: 30px 0;
 }
 .balance-container .static-buttons button{
-  padding: 10px 5px;
-
+  padding: 10px 8px;
+  font-size: 0.8rem;
 }
-
 
 .fund-account ul {
 
@@ -894,7 +893,7 @@ padding: 10px;
 
 .left-container .tooltip{
   padding: 16px;
-  font: 0.6rem arial;
+  font: 0.7rem arial;
   position: absolute;
   bottom: 70%;
   left: 10%;
@@ -905,6 +904,7 @@ padding: 10px;
 
 .left-container .showtip {
   display: block;
+
 }
 
 .left-container .hidetip {
