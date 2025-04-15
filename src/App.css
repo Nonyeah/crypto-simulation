@@ -847,6 +847,11 @@ justify-content: space-between;
 
   }
 
+  .coin-topnav li {
+  font-size: 0.7rem;
+    
+  }
+
   
 
   .chart-description table{
