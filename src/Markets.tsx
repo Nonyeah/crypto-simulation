@@ -121,7 +121,7 @@ function CryptoTable({
         </thead>
         <tbody className="string-content">
           <tr>
-            <td className="string-only">
+            <td colSpan={4} className="string-only">
               {" "}
               <p>{contentArray}</p>
             </td>
