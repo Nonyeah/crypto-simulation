@@ -848,8 +848,14 @@ justify-content: space-between;
   }
 
   .coin-topnav li {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
     
+  }
+
+  .coin-topnav .innerlist.showinner li{
+    margin: 16px 0;
+    color: #fff;
+    font-size: 0.7rem;
   }
 
   
