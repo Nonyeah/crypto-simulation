@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
 interface NavObjects {
@@ -31,15 +31,108 @@ const bottomNav: NavObjects[] = [
   { id: 4, tabName: "Products", links: ["Spot", "OCBS", "Convert", "NFT"] },
 ];
 
+interface BurgerMenu {
+  id: number;
+  name: string;
+  content: string[] | [];
+}
+
+const burgerMenu: BurgerMenu[] = [
+  { id: 0, name: "Buy Crypto", content: ["Buy Crypto via Bank Card"] },
+  { id: 1, name: "Markets", content: [] },
+  {
+    id: 2,
+    name: "Trade",
+    content: ["Convert", "Spot Exchange", "Margin Exchange", "Trading Bots"],
+  },
+  { id: 3, name: "Earn", content: ["Launch Platform", "Auto Invest"] },
+  {
+    id: 4,
+    name: "Support",
+    content: [
+      "Submit Live Chat",
+      "Support Centre",
+      "Trading Fees",
+      "Trading Fees",
+      "Trading Rule",
+    ],
+  },
+  { id: 5, name: "24/7 Chat Support", content: [] },
+  { id: 6, name: "Download", content: [] },
+  { id: 7, name: "GBP", content: [] },
+];
+
+function CreateList({ id, name, content }: BurgerMenu) {
+  const [objId, setobjId] = useState<number>(10);
+
+  function displayInnerList(id: number) {
+    const objRef: BurgerMenu | undefined = burgerMenu.find(
+      (obj) => obj.id === id
+    );
+    if (objRef) {
+      if (objId === id) {
+        setobjId(10);
+      } else {
+        setobjId(id);
+      }
+    }
+  }
+
+  return (
+    <li onClick={() => displayInnerList(id)} className="outer-list" key={id}>
+      {name}
+      <ul className={`hidden-list ${objId === id ? "show" : "hide"}`}>
+        {content.map((innerlist) => (
+          <li>{innerlist}</li>
+        ))}
+      </ul>
+    </li>
+  );
+}
+
 export default function Layout() {
+  const [showmenu, setshowmenu] = useState<boolean>(false);
+  const domRef = useRef<null | HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (showmenu) {
+      setTimeout(() => {
+        domRef.current!.style.width = "100%";
+        domRef.current!.style.height = "auto";
+      }, 1000);
+    } else {
+      setTimeout(() => {
+        domRef.current!.style.width = "0";
+        domRef.current!.style.height = "auto";
+      }, 1000);
+    }
+  }, [showmenu]);
+
+  const burgerNav = burgerMenu.map((category) => (
+    <CreateList
+      id={category.id}
+      name={category.name}
+      content={category.content}
+    />
+  ));
+
+  function showMenu() {
+    setshowmenu(!showmenu);
+  }
+
   return (
     <>
       <div className="topnav">
         <span className="title">CryptoNight</span>
         <p>
           <span>&#128100;</span>
-          <span>&#9776;</span>
+          <span onClick={showMenu} className="burger-tab">
+            &#9776;
+          </span>
         </p>
+        <div ref={domRef} className="burger-menu">
+          <ul>{burgerNav}</ul>
+        </div>
       </div>
       <Outlet />
       <div className="footermenu">
