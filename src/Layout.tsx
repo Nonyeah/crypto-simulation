@@ -63,29 +63,21 @@ const burgerMenu: BurgerMenu[] = [
 ];
 
 function CreateList({ id, name, content }: BurgerMenu) {
-  const [objId, setobjId] = useState<number>(10);
+  const [objId, setobjId] = useState<boolean>(false);
 
-  function displayInnerList(id: number) {
-    const objRef: BurgerMenu | undefined = burgerMenu.find(
-      (obj) => obj.id === id
-    );
-    if (objRef) {
-      if (objId === id) {
-        setobjId(10);
-      } else {
-        setobjId(id);
-      }
-    }
+  function displayInnerList() {
+    setobjId(!objId);
   }
 
   return (
-    <li onClick={() => displayInnerList(id)} className="outer-list" key={id}>
-      {name}
-      <ul className={`hidden-list ${objId === id ? "show" : "hide"}`}>
+    <li onClick={displayInnerList} className="outer-list" key={id}>
+      {name}  <span className="plus-opener">{content.length && !objId ? '+' : content.length && objId ? '-' : ""}</span>
+      <ul className={`hidden-list ${objId ? "show" : "hide"}`}>
         {content.map((innerlist) => (
           <li>{innerlist}</li>
         ))}
       </ul>
+     
     </li>
   );
 }
@@ -132,6 +124,7 @@ export default function Layout() {
         </p>
         <div ref={domRef} className="burger-menu">
           <ul>{burgerNav}</ul>
+          <p onClick={showMenu} className="close">&#9932;</p>
         </div>
       </div>
       <Outlet />
