@@ -147,11 +147,7 @@ function NewTabMenu({ id, tabName, links }: NavObjects) {
   const [isOpen, setIsOpen] = useState(false);
 
   function displayTab() {
-    if (!isOpen) {
-      setIsOpen(true);
-    } else {
-      setIsOpen(false);
-    }
+   setIsOpen(!isOpen);
   }
 
   return (
