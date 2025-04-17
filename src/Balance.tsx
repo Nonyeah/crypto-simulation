@@ -11,7 +11,7 @@ export default function Balance() {
     if (showcurrency && !closecurrency) {
       setTimeout(() => {
         currencyRef.current!.style.height = "100%";
-      }, 1000);
+      }, 800);
     } else if (showcurrency && closecurrency) {
       setTimeout(() => {
         currencyRef.current!.style.height = "0";
