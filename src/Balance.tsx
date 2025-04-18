@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, RefObject } from "react";
+import { useState, useRef, useEffect, RefObject, ReactNode } from "react";
 
 export default function Balance() {
   const [coin, setcoin] = useState<string>("ustd");
@@ -195,7 +195,7 @@ function ShowBalance({
     }
   }
 
-  const coinArray = coinType.map((coin) => (
+  const coinArray: ReactNode = coinType.map((coin) => (
     <li key={coin.id}>
       <button onClick={() => coinSelect(coin.id)} type="button">
         {coin.name}

@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 
 interface CoinData {
   id: number;
-  name: any;
+  name: string;
   price: number;
   change: number;
   src: string;
@@ -144,8 +144,8 @@ export default function Markets() {
       timerId = setInterval(() => {
         randomPriceChange(cryptodata, setcryptodata);
       }, 3000);
+      return () => clearInterval(timerId);
     }
-    return () => clearInterval(timerId);
   }, [cryptodata]);
 
   function randomPriceChange(
@@ -169,7 +169,7 @@ export default function Markets() {
       const modifiedPriceArray = coinData.map((obj) => {
         const randomNumber = Number(Math.random().toFixed(4));
         const oldPrice = Number(obj.price.toFixed(4));
-        let newPrice = oldPrice - randomNumber;
+        let newPrice = oldPrice - randomNumber - 0.5;
         newPrice =
           +newPrice.toFixed(4) < 0
             ? +newPrice.toFixed(4) * -1
@@ -260,8 +260,8 @@ export default function Markets() {
   ));
 
   const displayTable = (navlabelId: number) => {
-    const buttonSelected = data.find((button) => button.id === navlabelId);
-    if (buttonSelected) setcryptodata(buttonSelected.content);
+    const buttonSelected: Data | undefined = data.find((button) => button.id === navlabelId);
+    if (buttonSelected ) setcryptodata(buttonSelected.content);
   };
 
   return (
