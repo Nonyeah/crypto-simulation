@@ -850,6 +850,10 @@ justify-content: space-between;
     text-transform: capitalize;
   }
 
+  .markets-container{
+    margin: 20px 10px;
+  }
+
   .markets-container h4{
     font-size: 1rem;
   }
@@ -900,7 +904,7 @@ justify-content: space-between;
   
 .markets-content table {
   border-spacing: 5px;
-  margin-left: -10px;
+  margin-left: -11px;
 }
 
 .markets-content td, th{
@@ -917,7 +921,7 @@ justify-content: space-between;
   }
 
   .markets-container .arrow-up, .markets-container .arrow-down{
-    margin: 0 5px;
+    margin: 0 4px;
 
   }
 
