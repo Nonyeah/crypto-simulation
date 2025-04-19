@@ -84,13 +84,13 @@ span.plus-opener{
 }
 
 
-.bottomnav,
-.footermenu {
+.bottomnav{
   background-color: #fff;
-  margin: 0 10px;
-  border-radius: 8px;
-  
-  
+  margin: 8px;
+    
+}
+.footermenu {
+  margin: 30px 15px;
 }
 
 .bottomnav button {
