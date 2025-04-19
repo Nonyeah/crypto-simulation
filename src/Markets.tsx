@@ -63,7 +63,7 @@ const tableHeader: Array<TableHeader> = [
   { id: 0, label: "coin" },
   { id: 1, label: "name" },
   { id: 2, label: "price" },
-  { id: 3, label: "24H change" },
+  { id: 3, label: "change" },
 ];
 
 function CryptoTable({

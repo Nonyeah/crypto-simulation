@@ -474,6 +474,13 @@ margin: 20px 0;
   list-style-type: none;
 }
 
+.markets-container {
+  margin: 10px 15px;
+}
+.markets-container h4{
+  margin: 40px;
+}
+
 .markets-content table {
   width: 100%;
   border-spacing: 30px;
