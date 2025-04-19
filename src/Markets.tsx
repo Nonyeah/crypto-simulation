@@ -63,7 +63,7 @@ const tableHeader: Array<TableHeader> = [
   { id: 0, label: "coin" },
   { id: 1, label: "name" },
   { id: 2, label: "price" },
-  { id: 3, label: "change" },
+  { id: 3, label: "24H change" },
 ];
 
 function CryptoTable({
@@ -151,7 +151,7 @@ export default function Markets() {
   const generateRandomNum = () : number => Number(Math.random().toFixed(4));
   const calculateOldPrice = (obj: CoinData) : number =>  +(obj.price.toFixed(4));
   const calculatePercentageChange = (newPrice: number, oldPrice: number) : number => {
-    return +(((newPrice - oldPrice) / (oldPrice))  * 100).toFixed(6);
+    return +(((newPrice - oldPrice) / (oldPrice))  * 100).toFixed(4);
   }
   
 
