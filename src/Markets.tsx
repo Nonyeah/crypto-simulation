@@ -151,7 +151,7 @@ export default function Markets() {
   const generateRandomNum = () : number => Number(Math.random().toFixed(4));
   const calculateOldPrice = (obj: CoinData) : number =>  +(obj.price.toFixed(4));
   const calculatePercentageChange = (newPrice: number, oldPrice: number) : number => {
-    return +((newPrice - oldPrice) / (oldPrice * 100)).toFixed(6);
+    return +(((newPrice - oldPrice) / (oldPrice))  * 100).toFixed(6);
   }
   
 
@@ -176,7 +176,7 @@ export default function Markets() {
         let newPrice =  oldPrice - generateRandomNum() - 0.5;
         newPrice =
           +(newPrice.toFixed(4)) < 0
-            ? Number(Math.random().toFixed(4)) * -1
+            ? Number(Math.random().toFixed(4)) 
             : +(newPrice.toFixed(4));
             const percentChange = calculatePercentageChange(newPrice, oldPrice);
             return { ...obj, price: newPrice, change: percentChange };
