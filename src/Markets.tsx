@@ -148,36 +148,39 @@ export default function Markets() {
     }
   }, [cryptodata]);
 
+  const generateRandomNum = () : number => Number(Math.random().toFixed(4));
+  const calculateOldPrice = (obj: CoinData) : number =>  +(obj.price.toFixed(4));
+  const calculatePercentageChange = (newPrice: number, oldPrice: number) : number => {
+    return +((newPrice - oldPrice) / (oldPrice * 100)).toFixed(6);
+  }
+  
+
   function randomPriceChange(
     coinData: Array<CoinData>,
     setcryptodata: (param: Array<CoinData>) => void
   ) {
     if (Array.isArray(coinData) && ispositive) {
       const modifiedPriceArray = coinData.map((obj) => {
-        const randomNumber = Number(Math.random().toFixed(4));
-        const oldPrice = Number(obj.price.toFixed(4));
-        let newPrice = oldPrice + randomNumber;
-        newPrice = +newPrice.toFixed(4);
-        let percentChange = ((newPrice - oldPrice) / oldPrice) * 100;
-        percentChange = +percentChange.toFixed(4);
-        return { ...obj, price: newPrice, change: percentChange };
+        const oldPrice = calculateOldPrice(obj);
+        let newPrice = generateRandomNum() + Number(oldPrice.toFixed(4));
+        newPrice = +(newPrice.toFixed(4));
+       const percentChange = calculatePercentageChange(newPrice, oldPrice);
+       return { ...obj, price: newPrice, change: percentChange };
       });
 
       setcryptodata(modifiedPriceArray);
       setispositive(!ispositive);
     } else if (Array.isArray(coinData) && !ispositive) {
       const modifiedPriceArray = coinData.map((obj) => {
-        const randomNumber = Number(Math.random().toFixed(4));
-        const oldPrice = Number(obj.price.toFixed(4));
-        let newPrice = oldPrice - randomNumber - 0.5;
+        const oldPrice = calculateOldPrice(obj);
+        let newPrice =  oldPrice - generateRandomNum() - 0.5;
         newPrice =
-          +newPrice.toFixed(4) < 0
-            ? +newPrice.toFixed(4) * -1
-            : +newPrice.toFixed(4);
+          +(newPrice.toFixed(4)) < 0
+            ? Number(Math.random().toFixed(4)) * -1
+            : +(newPrice.toFixed(4));
+            const percentChange = calculatePercentageChange(newPrice, oldPrice);
+            return { ...obj, price: newPrice, change: percentChange };
 
-        let percentChange = ((newPrice - oldPrice) / oldPrice) * 100;
-        percentChange = +percentChange.toFixed(4);
-        return { ...obj, price: newPrice, change: percentChange };
       });
       setcryptodata(modifiedPriceArray);
       setispositive(!ispositive);
@@ -192,22 +195,21 @@ export default function Markets() {
 
     if (Array.isArray(cryptodata)) {
       if (headerObjectRef && headerObjectRef.label === "name") {
-        const copyStateArray = [...cryptodata];
-        const sortedArray = copyStateArray.sort((categoryA, categoryB) => {
+        const sortedArray = cryptodata.sort((categoryA, categoryB) => {
           if (categoryA.name < categoryB.name) return -1;
           if (categoryA.name > categoryB.name) return 1;
           return 0;
         });
         setcryptodata(sortedArray);
       } else if (headerObjectRef && headerObjectRef.label === "price") {
-        const copyStateArray = [...cryptodata];
-        const sortedArray = copyStateArray.sort(
+      
+        const sortedArray = cryptodata.sort(
           (categoryA, categoryB) => categoryA.price - categoryB.price
         );
         setcryptodata(sortedArray);
       } else {
-        const copyStateArray = [...cryptodata];
-        const sortedArray = copyStateArray.sort(
+       
+        const sortedArray = cryptodata.sort(
           (categoryA, categoryB) => categoryA.change - categoryB.change
         );
         setcryptodata(sortedArray);
@@ -223,22 +225,22 @@ export default function Markets() {
 
     if (Array.isArray(cryptodata)) {
       if (headerObjectRef && headerObjectRef.label === "name") {
-        const copyStateArray = [...cryptodata];
-        const sortedArray = copyStateArray.sort((categoryA, categoryB) => {
+   
+        const sortedArray = cryptodata.sort((categoryA, categoryB) => {
           if (categoryA.name < categoryB.name) return 1;
           if (categoryA.name > categoryB.name) return -1;
           return 0;
         });
         setcryptodata(sortedArray);
       } else if (headerObjectRef && headerObjectRef.label === "price") {
-        const copyStateArray = [...cryptodata];
-        const sortedArray = copyStateArray.sort(
+       
+        const sortedArray = cryptodata.sort(
           (categoryA, categoryB) => categoryB.price - categoryA.price
         );
         setcryptodata(sortedArray);
       } else {
-        const copyStateArray = [...cryptodata];
-        const sortedArray = copyStateArray.sort(
+       
+        const sortedArray = cryptodata.sort(
           (categoryA, categoryB) => categoryB.change - categoryA.change
         );
         setcryptodata(sortedArray);
