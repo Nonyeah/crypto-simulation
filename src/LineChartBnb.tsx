@@ -81,7 +81,7 @@ const options: ChartOptions<"line"> = {
 const LineChart = () => {
 return ( 
 <div style={{ position: "relative", width: "100%", height: "500px" }}>
- <Line data={data} options={options} />;
+ <Line data={data} options={options} />
 </div>
 )
  
