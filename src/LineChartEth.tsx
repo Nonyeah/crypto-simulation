@@ -63,6 +63,7 @@ const data: ChartData<"line"> = {
 
 const options: ChartOptions<"line"> = {
   responsive: true,
+  maintainAspectRatio: false,
   plugins: {
     legend: {
       position: "top",
@@ -75,7 +76,11 @@ const options: ChartOptions<"line"> = {
 };
 
 const LineChart = () => {
-  return <Line data={data} options={options} />;
+  return ( 
+  <div style={{ position: "relative", width: "100%", height: "500px" }}>
+   <Line data={data} options={options} />;
+  </div>
+  )
 };
 
 export default LineChart;

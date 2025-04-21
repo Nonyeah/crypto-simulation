@@ -58,7 +58,7 @@ export default function Dashboard() {
               </tr>
               <tr>
                 <td rowSpan={2}>
-                  <img src={fundImage} alt="money icon" />
+                  <img src={fundImage}  alt="money icon" />
                 </td>
                 <td>Fund Your Account</td>
               </tr>
