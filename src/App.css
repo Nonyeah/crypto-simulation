@@ -876,6 +876,7 @@ justify-content: space-between;
   
   .complete-account .user-icon {
     font-size: 2rem;
+    margin-left: 0;
   
   }
 
