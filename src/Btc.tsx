@@ -259,18 +259,20 @@ const chartInfo: Array<ChartInformation> = [
     text: "Tokens available for tracking including unlocked\
     tokens. If unlocked token data is unavailable non-publicly accessible tokens are excluded",
   },
+
   {
     id: 4,
+    label: "Maximum Supply",
+    text: "The total number of coins that will be issued in an asset's lifetime",
+  },
+  {
+    id: 5,
     label: "Total Supply",
     text: "The total number of tokens created versus the number of \
       total tokens destroyed",
   },
-  { id: 5, label: "Issue Date", text: "Asset initial offering date" },
-  {
-    id: 6,
-    label: "Issue Price",
-    text: "The price at which the first asset was issued",
-  },
+  { id: 6, label: "Issue Date", text: "Asset initial offering date" },
+
   {
     id: 7,
     label: "Historical High",
@@ -332,15 +334,15 @@ function ChartInfo() {
         </div>
         <div className="middle-container">
           <ul>
-            <li>No.5</li>
-            <li>$82,005.85M</li>
-            <li>3.136%</li>
-            <li>142,470,828 BTC</li>
-            <li>142,470,828 BTC</li>
-            <li>2017-07-08</li>
-            <li>$0.15</li>
-            <li>$793.3505040971822</li>
-            <li>$0.09610939770936966</li>
+            <li>No.1</li>
+            <li>$1,731,950.49M</li>
+            <li>62.3401%</li>
+            <li>19,854,409 BTC</li>
+            <li>21,000,000 BTC</li>
+            <li>19,854,409 BTC</li>
+            <li>2008-11-01</li>
+            <li>$109,114.88483408831</li>
+            <li>$0.04864654</li>
           </ul>
         </div>
         <div className="right-container">
