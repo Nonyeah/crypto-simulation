@@ -99,7 +99,9 @@ function CryptoTable({
             <img src={`${cryptocoin.src}`} />
           </NavLink>
         </td>
-        <td>{cryptocoin.name}</td>
+        <td>
+          <NavLink className="link-remover" to={`/${cryptocoin.name}`}>{cryptocoin.name}</NavLink>
+        </td>
         <td>{`£${cryptocoin.price}`}</td>
         <td>{`${cryptocoin.change}%`}</td>
       </tr>
@@ -148,12 +150,14 @@ export default function Markets() {
     }
   }, [cryptodata]);
 
-  const generateRandomNum = () : number => Number(Math.random().toFixed(4));
-  const calculateOldPrice = (obj: CoinData) : number =>  +(obj.price.toFixed(4));
-  const calculatePercentageChange = (newPrice: number, oldPrice: number) : number => {
-    return +(((newPrice - oldPrice) / (oldPrice))  * 100).toFixed(4);
-  }
-  
+  const generateRandomNum = (): number => Number(Math.random().toFixed(4));
+  const calculateOldPrice = (obj: CoinData): number => +obj.price.toFixed(4);
+  const calculatePercentageChange = (
+    newPrice: number,
+    oldPrice: number
+  ): number => {
+    return +(((newPrice - oldPrice) / oldPrice) * 100).toFixed(4);
+  };
 
   function randomPriceChange(
     coinData: Array<CoinData>,
@@ -163,9 +167,9 @@ export default function Markets() {
       const modifiedPriceArray = coinData.map((obj) => {
         const oldPrice = calculateOldPrice(obj);
         let newPrice = generateRandomNum() + Number(oldPrice.toFixed(4));
-        newPrice = +(newPrice.toFixed(4));
-       const percentChange = calculatePercentageChange(newPrice, oldPrice);
-       return { ...obj, price: newPrice, change: percentChange };
+        newPrice = +newPrice.toFixed(4);
+        const percentChange = calculatePercentageChange(newPrice, oldPrice);
+        return { ...obj, price: newPrice, change: percentChange };
       });
 
       setcryptodata(modifiedPriceArray);
@@ -173,14 +177,13 @@ export default function Markets() {
     } else if (Array.isArray(coinData) && !ispositive) {
       const modifiedPriceArray = coinData.map((obj) => {
         const oldPrice = calculateOldPrice(obj);
-        let newPrice =  oldPrice - generateRandomNum() - 0.5;
+        let newPrice = oldPrice - generateRandomNum() - 0.5;
         newPrice =
-          +(newPrice.toFixed(4)) < 0
-            ? Number(Math.random().toFixed(4)) 
-            : +(newPrice.toFixed(4));
-            const percentChange = calculatePercentageChange(newPrice, oldPrice);
-            return { ...obj, price: newPrice, change: percentChange };
-
+          +newPrice.toFixed(4) < 0
+            ? Number(Math.random().toFixed(4))
+            : +newPrice.toFixed(4);
+        const percentChange = calculatePercentageChange(newPrice, oldPrice);
+        return { ...obj, price: newPrice, change: percentChange };
       });
       setcryptodata(modifiedPriceArray);
       setispositive(!ispositive);
@@ -202,13 +205,11 @@ export default function Markets() {
         });
         setcryptodata(sortedArray);
       } else if (headerObjectRef && headerObjectRef.label === "price") {
-      
         const sortedArray = cryptodata.sort(
           (categoryA, categoryB) => categoryA.price - categoryB.price
         );
         setcryptodata(sortedArray);
       } else {
-       
         const sortedArray = cryptodata.sort(
           (categoryA, categoryB) => categoryA.change - categoryB.change
         );
@@ -225,7 +226,6 @@ export default function Markets() {
 
     if (Array.isArray(cryptodata)) {
       if (headerObjectRef && headerObjectRef.label === "name") {
-   
         const sortedArray = cryptodata.sort((categoryA, categoryB) => {
           if (categoryA.name < categoryB.name) return 1;
           if (categoryA.name > categoryB.name) return -1;
@@ -233,13 +233,11 @@ export default function Markets() {
         });
         setcryptodata(sortedArray);
       } else if (headerObjectRef && headerObjectRef.label === "price") {
-       
         const sortedArray = cryptodata.sort(
           (categoryA, categoryB) => categoryB.price - categoryA.price
         );
         setcryptodata(sortedArray);
       } else {
-       
         const sortedArray = cryptodata.sort(
           (categoryA, categoryB) => categoryB.change - categoryA.change
         );
@@ -262,8 +260,10 @@ export default function Markets() {
   ));
 
   const displayTable = (navlabelId: number) => {
-    const buttonSelected: Data | undefined = data.find((button) => button.id === navlabelId);
-    if (buttonSelected ) setcryptodata(buttonSelected.content);
+    const buttonSelected: Data | undefined = data.find(
+      (button) => button.id === navlabelId
+    );
+    if (buttonSelected) setcryptodata(buttonSelected.content);
   };
 
   return (

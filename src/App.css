@@ -441,6 +441,10 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 .select-crypto button:hover {
   color: #4fc00e;
 }
+.link-remover{
+ text-decoration: none;
+ color: #000;
+}
 
 .markets-container{
  
