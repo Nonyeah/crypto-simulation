@@ -347,7 +347,7 @@ p.currency {
 }
 
 .balance-container .message-container {
-padding: 16px;
+
 margin: 20px 0;
 font-size: 0.9rem;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -892,7 +892,7 @@ justify-content: space-between;
   }
 
   .balance-container .message-container, .balance-container p.text {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     }
     
   
