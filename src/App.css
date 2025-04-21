@@ -1040,10 +1040,11 @@ width: 100%;
 }
 
 
-  .outer-box {
-    flex-direction: column;
-    font-size: 0.9rem;
-  }
+.outer-box {
+  flex-direction: column;
+  font-size: 0.75rem;
+}
+
 
   .chart-outside-cover .mini-chart {
     display:flex;
@@ -1057,6 +1058,7 @@ width: 100%;
     
   }
 
+  
   .error-container {
     margin: 20px;
     border: 1px solid grey; 
