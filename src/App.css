@@ -617,6 +617,10 @@ background-color: #3a3838;
 
 }
 
+.chart-nav button.active{
+  background-color: #4eb612;
+}
+
 .chart-nav ul button{
   font-size: 0.9rem;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

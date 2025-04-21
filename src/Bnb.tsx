@@ -3,7 +3,6 @@ import LineChart from "./LineChartBnb";
 import { useNavigate } from "react-router-dom";
 import MiniChartBnb from "./MiniChartBnb";
 
-
 interface MainTopNav {
   id: number;
   labelName: string;
@@ -72,7 +71,7 @@ export default function Bnb() {
 function DisplayListBlock({ id, labelName, content }: MainTopNav) {
   const [showpanel, setshowpanel] = useState<boolean>(false);
   return (
-    <li 
+    <li
       onMouseOver={() => setshowpanel(true)}
       onMouseOut={() => setshowpanel(false)}
       key={id}
@@ -91,6 +90,7 @@ function DisplayListBlock({ id, labelName, content }: MainTopNav) {
 
 function ChartHouse() {
   const [infodisplay, setinfodisplay] = useState<string>("chart");
+  const [active, setactive] = useState<number>(10);
 
   function selectTab(numId: number) {
     const category: ChartHouseNav | undefined = chartHouseNav.find(
@@ -98,12 +98,18 @@ function ChartHouse() {
     );
     if (category) {
       setinfodisplay(category.name.toLowerCase());
+      setactive(category.id);
     }
   }
 
   const topnav: ReactNode = chartHouseNav.map((label) => (
     <li key={label.id}>
-      <button onClick={() => selectTab(label.id)}>{label.name}</button>
+      <button
+        className={label.id === active ? "active" : ""}
+        onClick={() => selectTab(label.id)}
+      >
+        {label.name}
+      </button>
     </li>
   ));
 

@@ -89,6 +89,7 @@ function DisplayListBlock({ id, labelName, content }: MainTopNav) {
 
 function ChartHouse() {
   const [infodisplay, setinfodisplay] = useState<string>("chart");
+  const [active, setactive] = useState<number>(10);
 
   function selectTab(numId: number) {
     const category: ChartHouseNav | undefined = chartHouseNav.find(
@@ -96,12 +97,13 @@ function ChartHouse() {
     );
     if (category) {
       setinfodisplay(category.name.toLowerCase());
+      setactive(category.id);
     }
   }
 
   const topnav: ReactNode = chartHouseNav.map((label) => (
     <li key={label.id}>
-      <button onClick={() => selectTab(label.id)}>{label.name}</button>
+      <button  className={label.id === active ? "active" : ""} onClick={() => selectTab(label.id)}>{label.name}</button>
     </li>
   ));
 
