@@ -392,8 +392,12 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 .balance-container .static-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 30px 0;
+}
+
+.balance-container button.active{
+  background-color: #3de63d;
 }
 
 .balance-container button {
@@ -486,14 +490,14 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
  color:#000;
 }
 
-.markets-container h4{
+.markets-container h5{
   font-size: 1.2rem;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .markets-container .buttons-container {
   display:flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
 }
@@ -509,6 +513,9 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 5px;
   font-size: 1rem;
 
+}
+.buttons-container button.active{
+  background-color: #3de63d;
 }
 
 
@@ -948,8 +955,8 @@ justify-content: space-between;
   margin: 30px 0;
 }
 .balance-container .static-buttons button{
-  padding: 10px 8px;
-  font-size: 0.8rem;
+  padding: 10px;
+  font-size: 0.75rem;
 }
 
 .fund-account ul {

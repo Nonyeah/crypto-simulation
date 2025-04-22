@@ -5,6 +5,7 @@ export default function Balance() {
   const [showcurrency, setshowcurrency] = useState<boolean>(false);
   const [closecurrency, setclosecurrency] = useState<boolean>(false);
   const [navlabeltext, setnavlabeltext] = useState<string>(" ");
+  const [active, setactive] = useState<number>(10);
   const currencyRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -30,6 +31,7 @@ export default function Balance() {
     );
     if (objLabelMatch) {
       setnavlabeltext(objLabelMatch.message);
+      setactive(id);
     }
   }
 
@@ -51,7 +53,7 @@ export default function Balance() {
           </p>
           <div className="static-buttons">
             {tabMenu.map((title) => (
-              <button onClick={() => tabNav(title.id)} key={title.id}>
+              <button className={ title.id === active ? "active" : ""} onClick={() => tabNav(title.id)} key={title.id}>
                 {title.label}
               </button>
             ))}
@@ -85,7 +87,7 @@ export default function Balance() {
           </p>
           <div className="static-buttons">
             {tabMenu.map((title) => (
-              <button onClick={() => tabNav(title.id)} key={title.id}>
+              <button className={ title.id === active ? "active" : ""}  onClick={() => tabNav(title.id)} key={title.id}>
                 {title.label}
               </button>
             ))}
@@ -121,7 +123,7 @@ export default function Balance() {
           </p>
           <div className="static-buttons">
             {tabMenu.map((title) => (
-              <button onClick={() => tabNav(title.id)} key={title.id}>
+              <button className={ title.id === active ? "active" : ""}  onClick={() => tabNav(title.id)} key={title.id}>
                 {title.label}
               </button>
             ))}

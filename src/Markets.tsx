@@ -139,6 +139,7 @@ export default function Markets() {
     data[1].content
   );
   const [ispositive, setispositive] = useState<boolean>(false);
+  const [active, setactive] = useState<number>(10);
 
   useEffect(() => {
     let timerId: number;
@@ -248,7 +249,7 @@ export default function Markets() {
 
   const labelArray = navLabels.map((label) => (
     <li key={label.id}>
-      <button
+      <button className={ label.id === active ? "active" : ""}
         type="button"
         onClick={() => {
           displayTable(label.id);
@@ -263,12 +264,15 @@ export default function Markets() {
     const buttonSelected: Data | undefined = data.find(
       (button) => button.id === navlabelId
     );
-    if (buttonSelected) setcryptodata(buttonSelected.content);
+    if (buttonSelected) {
+      setcryptodata(buttonSelected.content);
+      setactive(navlabelId);
+    }
   };
 
   return (
     <div className="markets-container">
-      <h4>Markets</h4>
+      <h5>Markets</h5>
       <ul className="buttons-container">{labelArray}</ul>
       <div className="markets-content">
         {" "}
