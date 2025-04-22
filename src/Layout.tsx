@@ -16,7 +16,7 @@ const bottomNav: NavObjects[] = [
   {
     id: 1,
     tabName: "Support",
-    links: ["Suport Center", "24/7 Chat Support", "Fees", "Trading Rules"],
+    links: ["Support Center", "24/7 Chat Support", "Fees", "Trading Rules"],
   },
   { id: 2, tabName: "Legal", links: ["Terms", "Privacy Notice"] },
   {
@@ -138,6 +138,7 @@ export default function Layout() {
             />
           );
         })}
+        <DesktopTabMenu />
       </div>
     </>
   );
@@ -164,6 +165,26 @@ function NewTabMenu({ id, tabName, links }: NavObjects) {
       </div>
     </div>
   );
+}
+
+function DesktopTabMenu(){
+
+  const desktopNav = bottomNav.map(category => {
+  return <li className="outer" key={category.id}>{category.tabName}
+  <ul className="nested">
+    {category.links.map(submenu => <li key={submenu}>{submenu}</li>)}
+  </ul>
+  </li> 
+  }
+)
+return (
+  <div className="desktop-bottom-nav">
+    <ul>
+  {desktopNav}
+    </ul>
+
+  </div>
+)
 }
 
 /*function NewTabMenu({ id, tabName, links }: NavObjects) {

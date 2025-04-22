@@ -87,10 +87,42 @@ span.plus-opener{
 .bottomnav{
   background-color: #fff;
   margin: 8px;
+  display: none;
     
 }
 .footermenu {
   margin: 30px 15px;
+}
+
+.desktop-bottom-nav ul{
+display: flex;
+justify-content: space-between;
+margin: 20px;
+padding: 0;
+list-style-type: none;
+cursor: pointer;
+}
+
+.desktop-bottom-nav li.outer{
+  margin: 10px 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
+}
+
+.outer .nested{
+  display: block;
+  margin: 20px 0;
+}
+
+.outer .nested li {
+  margin: 15px 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 0.8rem;
+}
+
+.outer .nested li:hover {
+  color: #030257;
+
 }
 
 .bottomnav button {
@@ -806,6 +838,13 @@ justify-content: space-between;
 
 
 @media only screen and (max-width: 700px) {
+  .bottomnav {
+    display: block;
+  }
+
+  .desktop-bottom-nav {
+    display: none;
+  }
 
   .topnav span.burger-tab{
     visibility: visible;
