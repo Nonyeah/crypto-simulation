@@ -994,6 +994,10 @@ justify-content: space-between;
 
   }
 
+  .coin-container {
+    display: none;
+  }
+
   .coin-topnav li {
   font-size: 0.75rem;
     
