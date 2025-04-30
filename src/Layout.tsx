@@ -1,5 +1,7 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, ReactNode } from "react";
 import { Outlet } from "react-router-dom";
+import { mainTopNav } from "./TopNavData";
+import DisplayListBlock from "./DisplayListBlock";
 
 interface NavObjects {
   id: number;
@@ -71,13 +73,15 @@ function CreateList({ id, name, content }: BurgerMenu) {
 
   return (
     <li onClick={displayInnerList} className="outer-list" key={id}>
-      {name}  <span className="plus-opener">{content.length && !objId ? '+' : content.length && objId ? '-' : ""}</span>
+      {name}{" "}
+      <span className="plus-opener">
+        {content.length && !objId ? "+" : content.length && objId ? "-" : ""}
+      </span>
       <ul className={`hidden-list ${objId ? "show" : "hide"}`}>
         {content.map((innerlist) => (
           <li>{innerlist}</li>
         ))}
       </ul>
-     
     </li>
   );
 }
@@ -112,6 +116,14 @@ export default function Layout() {
     setshowmenu(!showmenu);
   }
 
+  const navlist: ReactNode = mainTopNav.map((label) => (
+    <DisplayListBlock
+      id={label.id}
+      labelName={label.labelName}
+      content={label.content}
+    />
+  ));
+
   return (
     <>
       <div className="topnav">
@@ -124,9 +136,18 @@ export default function Layout() {
         </p>
         <div ref={domRef} className="burger-menu">
           <ul>{burgerNav}</ul>
-          <p onClick={showMenu} className="close">&#9932;</p>
+          <p onClick={showMenu} className="close">
+            &#9932;
+          </p>
         </div>
       </div>
+
+      <div className="coin-container">
+        <div className="coin-topnav">
+          <ul>{navlist}</ul>
+        </div>
+      </div>
+
       <Outlet />
       <div className="footermenu">
         {bottomNav.map((tabsection) => {
@@ -148,7 +169,7 @@ function NewTabMenu({ id, tabName, links }: NavObjects) {
   const [isOpen, setIsOpen] = useState(false);
 
   function displayTab() {
-   setIsOpen(!isOpen);
+    setIsOpen(!isOpen);
   }
 
   return (
@@ -167,24 +188,24 @@ function NewTabMenu({ id, tabName, links }: NavObjects) {
   );
 }
 
-function DesktopTabMenu(){
-
-  const desktopNav = bottomNav.map(category => {
-  return <li className="outer" key={category.id}>{category.tabName}
-  <ul className="nested">
-    {category.links.map(submenu => <li key={submenu}>{submenu}</li>)}
-  </ul>
-  </li> 
-  }
-)
-return (
-  <div className="desktop-bottom-nav">
-    <ul>
-  {desktopNav}
-    </ul>
-
-  </div>
-)
+function DesktopTabMenu() {
+  const desktopNav = bottomNav.map((category) => {
+    return (
+      <li className="outer" key={category.id}>
+        {category.tabName}
+        <ul className="nested">
+          {category.links.map((submenu) => (
+            <li key={submenu}>{submenu}</li>
+          ))}
+        </ul>
+      </li>
+    );
+  });
+  return (
+    <div className="desktop-bottom-nav">
+      <ul>{desktopNav}</ul>
+    </div>
+  );
 }
 
 /*function NewTabMenu({ id, tabName, links }: NavObjects) {
