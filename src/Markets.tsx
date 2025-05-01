@@ -80,12 +80,12 @@ function CryptoTable({
       <th key={headercell.id}>
         <span>{headercell.label}</span>
         <span
-          className="arrow-up"
-          onClick={() => sortAscending(headercell.id)}
-        ></span>
-        <span
           className="arrow-down"
           onClick={() => sortDescending(headercell.id)}
+        ></span>
+        <span
+          className="arrow-up"
+          onClick={() => sortAscending(headercell.id)}
         ></span>
       </th>
     );

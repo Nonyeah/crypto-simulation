@@ -262,10 +262,13 @@ function FundAccount({
     action: "Buy Now",
   });
 
+  const [selected, setselected] = useState<number>(10);
+
   function changeTab(tabId: number) {
     const tabInfoObj = fundObj.find((tabinfo) => tabinfo.id === tabId);
     if (tabInfoObj) {
       setDetails({ ...tabInfoObj });
+      setselected(tabId);
     }
   }
 
@@ -274,7 +277,7 @@ function FundAccount({
       <li key={fundtype.id}>
         <button
           type="button"
-          className="fund-tab-buttons"
+          className={`fund-tab-buttons ${selected === fundtype.id ? "active" : ""}`}
           onClick={() => {
             changeTab(fundtype.id);
           }}

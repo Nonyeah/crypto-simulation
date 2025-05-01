@@ -301,7 +301,7 @@ cursor: pointer;
   justify-content: space-around;
 }
 
-.fund-account .fund-tab-buttons {
+ button.fund-tab-buttons {
   padding: 16px;
   border: none;
   outline: none;
@@ -311,6 +311,10 @@ cursor: pointer;
   border-radius: 5px;
   margin: 20px 0;
   font-weight: bold;
+}
+button.active {
+  background-color: #000; 
+  color: #fff;
 }
 
 p.learn-more a {
@@ -560,11 +564,11 @@ padding: 16px 0;
   cursor: pointer;
 }
 
-.markets-container .arrow-up::after {
+.markets-container .arrow-down::after {
   content: '\25BC';
 }
 
-.markets-container .arrow-down::after{
+.markets-container .arrow-up::after{
   content: '\25B2';
 }
 
