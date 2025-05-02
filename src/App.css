@@ -138,13 +138,6 @@ cursor: pointer;
   color: #000;
 }
 
-.bottomnav button::after {
-  content: "+";
-  font-weight: bold;
-  float: right;
-  color: #000;
-  font-size: 1rem;
-}
 
 .bottomnav ul {
   list-style-type: none;

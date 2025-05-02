@@ -175,7 +175,7 @@ function NewTabMenu({ id, tabName, links }: NavObjects) {
   return (
     <div key={id} className="bottomnav">
       <button type="button" onClick={displayTab}>
-        <span>{tabName}</span>
+        <span>{tabName}</span><span className="plus-opener">{isOpen ? "-" : "+"}</span>
       </button>
       <div className={isOpen ? "divshow" : "divhide"}>
         <ul>
