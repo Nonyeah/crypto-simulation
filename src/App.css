@@ -52,12 +52,7 @@ html {
   display: none;
 }
 
-span.plus-opener{
-  text-align: right;
-  font-size: 1.1rem;
-  position: absolute;
- left: 95%;
-}
+
 
 .topnav span.burger-tab{
  visibility: hidden;
