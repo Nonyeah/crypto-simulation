@@ -27,12 +27,12 @@ function App() {
             </Home>
           }
         />
-        <Route path="Bnb" element={<Bnb />} />
-        <Route path="Btc" element={<Btc />} />
-        <Route path="Eth" element={<Eth />} />
-        <Route path="Doge" element={<Doge />} />
-        <Route path="Xrp" element={<Xrp />} />
-        <Route path="Sol" element={<Sol />} />
+        <Route path="/Bnb" element={<Bnb />} />
+        <Route path="/Btc" element={<Btc />} />
+        <Route path="/Eth" element={<Eth />} />
+        <Route path="/Doge" element={<Doge />} />
+        <Route path="/Xrp" element={<Xrp />} />
+        <Route path="/Sol" element={<Sol />} />
         <Route path="*" element={<Error404 />} />
       </Route>
     </Routes>

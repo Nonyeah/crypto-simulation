@@ -714,7 +714,7 @@ padding: 0 16px;
 
 
 
-.left-container .tooltip{
+.left-container  span.tooltip{
   padding: 16px;
   background-color: #3a3838;
   color: #fff;
@@ -731,7 +731,7 @@ padding: 0 16px;
 }
 
 
-.left-container .tooltip::after {
+.left-container span.tooltip::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -742,11 +742,11 @@ padding: 0 16px;
   border-color: #3a3838 transparent transparent transparent;
 }
 
-.left-container .showtip {
+.left-container span.showtip {
   display: block;
 }
 
-.left-container .hidetip {
+.left-container span.hidetip {
   display:none;
 }
 

@@ -64,10 +64,8 @@ export default function Dashboard() {
               </tr>
               <tr>
                 <td
-                  className="green not-completed"
-                  onClick={() => setshowfund(true)}
-                >
-                  <button type="button">not completed &gt;</button>
+                  className="green not-completed">
+                  <button type="button"  onClick={() => setshowfund(true)}>not completed &gt;</button>
                 </td>
               </tr>
               <tr>

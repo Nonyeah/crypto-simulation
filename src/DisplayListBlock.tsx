@@ -16,8 +16,8 @@ export default function DisplayListBlock({
       {labelName}
       <ul className={`innerlist ${showpanel ? "showinner" : "hideinner"}`}>
         <li>
-          {content.map((item) => (
-            <li key={item}>{item}</li>
+          {content.map((item, id) => (
+            <li key={id}>{item}</li>
           ))}
         </li>
       </ul>

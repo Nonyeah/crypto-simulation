@@ -78,8 +78,8 @@ function CreateList({ id, name, content }: BurgerMenu) {
         {content.length && !objId ? "+" : content.length && objId ? "-" : ""}
       </span>
       <ul className={`hidden-list ${objId ? "show" : "hide"}`}>
-        {content.map((innerlist) => (
-          <li>{innerlist}</li>
+        {content.map((innerlist, index) => (
+          <li key={index}>{innerlist}</li>
         ))}
       </ul>
     </li>

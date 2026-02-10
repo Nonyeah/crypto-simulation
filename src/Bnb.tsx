@@ -34,7 +34,7 @@ export default function Bnb() {
 
 function ChartHouse() {
   const [infodisplay, setinfodisplay] = useState<string>("chart");
-  const [active, setactive] = useState<number>(10);
+  const [active, setactive] = useState<number>(0);
 
   function selectTab(numId: number) {
     const category: ChartHouseNav | undefined = chartHouseNav.find(

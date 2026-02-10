@@ -204,17 +204,17 @@ export default function Markets() {
           if (categoryA.name > categoryB.name) return 1;
           return 0;
         });
-        setcryptodata(sortedArray);
+        setcryptodata([...sortedArray]);
       } else if (headerObjectRef && headerObjectRef.label === "price") {
         const sortedArray = cryptodata.sort(
           (categoryA, categoryB) => categoryA.price - categoryB.price
         );
-        setcryptodata(sortedArray);
+        setcryptodata([...sortedArray]);
       } else {
         const sortedArray = cryptodata.sort(
           (categoryA, categoryB) => categoryA.change - categoryB.change
         );
-        setcryptodata(sortedArray);
+        setcryptodata([...sortedArray]);
       }
     }
   }
@@ -232,17 +232,17 @@ export default function Markets() {
           if (categoryA.name > categoryB.name) return -1;
           return 0;
         });
-        setcryptodata(sortedArray);
+        setcryptodata([...sortedArray]);
       } else if (headerObjectRef && headerObjectRef.label === "price") {
         const sortedArray = cryptodata.sort(
           (categoryA, categoryB) => categoryB.price - categoryA.price
         );
-        setcryptodata(sortedArray);
+        setcryptodata([...sortedArray]);
       } else {
         const sortedArray = cryptodata.sort(
           (categoryA, categoryB) => categoryB.change - categoryA.change
         );
-        setcryptodata(sortedArray);
+        setcryptodata([...sortedArray]);
       }
     }
   }
