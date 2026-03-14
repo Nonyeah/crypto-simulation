@@ -1,9 +1,7 @@
-import { useState, ReactNode } from "react";
-import LineChart from "./LineChartXrp";
+import { ReactNode, useState } from "react";
+import LineChart from "../Charts/lineCharts/LineChartBnb";
 import { useNavigate } from "react-router-dom";
-import MiniChartXrp from "./MiniChartXrp";
-
-
+import MiniChartBnb from "../Charts/barCharts/MiniChartBnb";
 
 const chartHouseNav: Array<ChartHouseNav> = [
   { id: 0, name: "Chart" },
@@ -17,13 +15,11 @@ type ChartHouseNav = {
   name: string;
 };
 
-
-export default function Xrp() {
+export default function Bnb() {
   const navigate = useNavigate();
 
   return (
     <>
-      
       <ChartHouse />
       <div className="previous">
         <button onClick={() => navigate("/")}>prev page</button>
@@ -34,11 +30,11 @@ export default function Xrp() {
 
 function ChartHouse() {
   const [infodisplay, setinfodisplay] = useState<string>("chart");
-  const [active, setactive] = useState<number>(10);
+  const [active, setactive] = useState<number>(0);
 
   function selectTab(numId: number) {
     const category: ChartHouseNav | undefined = chartHouseNav.find(
-      (category) => category.id === numId
+      (category) => category.id === numId,
     );
     if (category) {
       setinfodisplay(category.name.toLowerCase());
@@ -89,7 +85,7 @@ function ChartHouse() {
         </div>
         <div className="chart-outside-cover">
           <div className="mini-chart">
-            <MiniChartXrp />
+            <MiniChartBnb />
           </div>
         </div>
       </>
@@ -114,7 +110,7 @@ function TradingAnalysis() {
       <div className="left-box">
         <section>
           <h4>Sum Buy Amount</h4>
-          <p>0.000 XRP</p>
+          <p>0.000 BNB</p>
         </section>
 
         <section>
@@ -124,7 +120,7 @@ function TradingAnalysis() {
 
         <section>
           <h4>Average Buy Price</h4>
-          <p>0.000 USTD/XRP</p>
+          <p>0.000 USTD/BNB</p>
         </section>
 
         <section>
@@ -135,7 +131,7 @@ function TradingAnalysis() {
       <div className="middle-box">
         <section>
           <h4>Sum Sell Amount</h4>
-          <p>0.000 XRP</p>
+          <p>0.000 BNB</p>
         </section>
 
         <section>
@@ -145,7 +141,7 @@ function TradingAnalysis() {
 
         <section>
           <h4>Average Sell Price</h4>
-          <p>0.000 USTD/XRP</p>
+          <p>0.000 USTD/BNB</p>
         </section>
 
         <section>
@@ -156,7 +152,7 @@ function TradingAnalysis() {
       <div className="right-box">
         <section>
           <h4>Current Position</h4>
-          <p>0.000 XRP</p>
+          <p>0.000 BNB</p>
         </section>
 
         <section>
@@ -166,7 +162,7 @@ function TradingAnalysis() {
 
         <section>
           <h4>Average Position Price</h4>
-          <p>0.000 USTD/XRP</p>
+          <p>0.000 USTD/BNB</p>
         </section>
 
         <section>
@@ -210,20 +206,18 @@ const chartInfo: Array<ChartInformation> = [
     text: "Tokens available for tracking including unlocked\
     tokens. If unlocked token data is unavailable non-publicly accessible tokens are excluded",
   },
-
   {
     id: 4,
-    label: "Maximum Supply",
-    text: "The total number of tokens that will be issued in an assets life cycle",
-  },
-  {
-    id: 5,
     label: "Total Supply",
     text: "The total number of tokens created versus the number of \
       total tokens destroyed",
   },
-  { id: 6, label: "Issue Date", text: "Asset initial offering date" },
-
+  { id: 5, label: "Issue Date", text: "Asset initial offering date" },
+  {
+    id: 6,
+    label: "Issue Price",
+    text: "The price at which the first asset was issued",
+  },
   {
     id: 7,
     label: "Historical High",
@@ -243,7 +237,7 @@ function ChartInfo() {
 
   function showToolTip(numId: number) {
     const textRef: ChartInformation | undefined = chartInfo.find(
-      (coindetails) => coindetails.id === numId
+      (coindetails) => coindetails.id === numId,
     );
     if (textRef) {
       setidmatch(textRef.id);
@@ -252,7 +246,7 @@ function ChartInfo() {
 
   function hideToolTip(numId: number) {
     const textRef: ChartInformation | undefined = chartInfo.find(
-      (coindetails) => coindetails.id === numId
+      (coindetails) => coindetails.id === numId,
     );
     if (textRef) {
       setidmatch(20);
@@ -261,7 +255,7 @@ function ChartInfo() {
 
   return (
     <div className="info-cover">
-      <h2>XRP</h2>
+      <h2>BNB</h2>
       <div className="info-container">
         <div className="left-container">
           <ul>
@@ -285,34 +279,37 @@ function ChartInfo() {
         </div>
         <div className="middle-container">
           <ul>
-            <li>No.4</li>
-            <li>$121,639.05M</li>
-            <li>4.3783%</li>
-            <li>58,394,167,593 XRP</li>
-            <li>100,000,000,000 XRP</li>
-            <li>99,986,232,255 XRP</li>
-            <li>2013-02-02</li>
-            <li>$3.841939926147461</li>
-            <li>$0.002802350092679262</li>
+            <li>No.5</li>
+            <li>$82,005.85M</li>
+            <li>3.136%</li>
+            <li>142,470,828 BNB</li>
+            <li>142,470,828 BNB</li>
+            <li>2017-07-08</li>
+            <li>$0.15</li>
+            <li>$793.3505040971822</li>
+            <li>$0.09610939770936966</li>
           </ul>
         </div>
         <div className="right-container">
           <h3>Intro</h3>
           <p>
-            XRP is the native digital asset on the XRP Ledger (XRPL) blockchain,
-            built originally for payments. XRP primarily facilitates
-            transactions on the network and bridges currencies in the XRP
-            Ledger's native DEX. XRP is a digital asset that’s native to the XRP
-            Ledger—an open-source, permissionless and decentralized blockchain
-            technology. Created in 2012 specifically for payments, XRP can
-            settle transactions on the ledger in 3-5 seconds, using a network of
-            trusted validators to verify transactions on the ledger. XRP can be
-            sent directly without needing a central intermediary, making it a
-            convenient instrument in bridging two different currencies quickly
-            and efficiently. It is freely exchanged on the open market and used
-            in the real world for enabling cross-border payments and
-            microtransactions. XRP can also be used to exchange different
-            currencies and access crypto liquidity.
+            BNB is a cryptocurrency that can be used to trade and pay fees on
+            the Binance cryptocurrency exchange. BNB is also the cryptocurrency
+            coin that powers the BNB Chain ecosystem. As one of the world's most
+            popular utility tokens, BNB is useful to users in a wide range of
+            applications and use cases. BNB was launched through an Initial Coin
+            Offering (or ICO) that took place from June 26th to July 3rd, 2017 -
+            11 days before the Binance Exchange opened for trading. The issue
+            price was 1 ETH for 2,700 BNB or 1 BTC for 20,000 BNB. Although BNB
+            was launched through an ICO, BNB does not provide users with a claim
+            on Binance profits and does not represent an investment in Binance.
+            With various applications both within the BNB Chain ecosystem and
+            beyond, BNB serves numerous purposes. Originally launched as an
+            ERC-20 token on the Ethereum blockchain, BNB has now migrated to the
+            main BNB Chain. Although the initial total supply was set at 200
+            million coins, the supply is gradually decreasing as a result of
+            frequent coin burns. The current price of BNB is updated and
+            available in real-time on Binance.
           </p>
         </div>
       </div>

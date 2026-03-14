@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, ReactNode } from "react";
 import { Outlet } from "react-router-dom";
-import { mainTopNav } from "./TopNavData";
-import DisplayListBlock from "./DisplayListBlock";
+import { mainTopNav } from "../Components/TopNavData";
+import DisplayListBlock from "../Components/DisplayListBlock";
 
 interface NavObjects {
   id: number;

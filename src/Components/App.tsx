@@ -1,17 +1,17 @@
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
-import Layout from "./Layout";
-import Dashboard from "./Dashboard";
-import Home from "./Home";
-import Balance from "./Balance";
-import Markets from "./Markets";
-import Error404 from "./404Error";
-import Doge from "./Doge";
-import Bnb from "./Bnb";
-import Btc from "./Btc";
-import Eth from "./Eth";
-import Xrp from "./Xrp";
-import Sol from "./Sol";
+import "../Styles/App.css";
+import Layout from "../Layout/Layout";
+import Dashboard from "../Routes/Dashboard";
+import Home from "../Routes/Home";
+import Balance from "../Routes/Balance";
+import Markets from "../Routes/Markets";
+import Error404 from "../Routes/404Error";
+import Doge from "../Routes/Doge";
+import Bnb from "../Routes/Bnb";
+import Btc from "../Routes/Btc";
+import Eth from "../Routes/Eth";
+import Xrp from "../Routes/Xrp";
+import Sol from "../Routes/Sol";
 
 function App() {
   return (

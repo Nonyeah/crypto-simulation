@@ -1,10 +1,10 @@
 import { useState, ReactNode, useEffect } from "react";
-import bitcoin from "./assets/bitcoin.jpg";
-import bnb from "./assets/bnb.jpg";
-import doge from "./assets/dogecoin.jpg";
-import ethereum from "./assets/ethereum.jpg";
-import solana from "./assets/solana.jpg";
-import xrp from "./assets/xrp.jpg";
+import bitcoin from "../assets/bitcoin.jpg";
+import bnb from "../assets/bnb.jpg";
+import doge from "../assets/dogecoin.jpg";
+import ethereum from "../assets/ethereum.jpg";
+import solana from "../assets/solana.jpg";
+import xrp from "../assets/xrp.jpg";
 import { NavLink } from "react-router-dom";
 
 interface CoinData {

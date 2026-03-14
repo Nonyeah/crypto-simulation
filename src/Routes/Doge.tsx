@@ -1,8 +1,7 @@
 import { useState, ReactNode } from "react";
-import LineChart from "./LineChartEth";
+import LineChart from "../Charts/lineCharts/LineChartDoge";
 import { useNavigate } from "react-router-dom";
-import MiniChartEth from "./MiniChartEth";
-
+import MiniChartDoge from "../Charts/barCharts/MiniChartDoge";
 
 const chartHouseNav: Array<ChartHouseNav> = [
   { id: 0, name: "Chart" },
@@ -16,12 +15,11 @@ type ChartHouseNav = {
   name: string;
 };
 
-export default function Eth() {
+export default function Doge() {
   const navigate = useNavigate();
 
   return (
     <>
-    
       <ChartHouse />
       <div className="previous">
         <button onClick={() => navigate("/")}>prev page</button>
@@ -30,14 +28,13 @@ export default function Eth() {
   );
 }
 
-
 function ChartHouse() {
   const [infodisplay, setinfodisplay] = useState<string>("chart");
   const [active, setactive] = useState<number>(0);
 
   function selectTab(numId: number) {
     const category: ChartHouseNav | undefined = chartHouseNav.find(
-      (category) => category.id === numId
+      (category) => category.id === numId,
     );
     if (category) {
       setinfodisplay(category.name.toLowerCase());
@@ -47,7 +44,12 @@ function ChartHouse() {
 
   const topnav: ReactNode = chartHouseNav.map((label) => (
     <li key={label.id}>
-      <button  className={label.id === active ? "active" : ""} onClick={() => selectTab(label.id)}>{label.name}</button>
+      <button
+        className={label.id === active ? "active" : ""}
+        onClick={() => selectTab(label.id)}
+      >
+        {label.name}
+      </button>
     </li>
   ));
 
@@ -83,7 +85,7 @@ function ChartHouse() {
         </div>
         <div className="chart-outside-cover">
           <div className="mini-chart">
-            <MiniChartEth />
+            <MiniChartDoge />
           </div>
         </div>
       </>
@@ -108,7 +110,7 @@ function TradingAnalysis() {
       <div className="left-box">
         <section>
           <h4>Sum Buy Amount</h4>
-          <p>0.000 ETH</p>
+          <p>0.000 Doge</p>
         </section>
 
         <section>
@@ -118,7 +120,7 @@ function TradingAnalysis() {
 
         <section>
           <h4>Average Buy Price</h4>
-          <p>0.000 USTD/ETH</p>
+          <p>0.000 USTD/Doge</p>
         </section>
 
         <section>
@@ -129,7 +131,7 @@ function TradingAnalysis() {
       <div className="middle-box">
         <section>
           <h4>Sum Sell Amount</h4>
-          <p>0.000 ETH</p>
+          <p>0.000 Doge</p>
         </section>
 
         <section>
@@ -139,7 +141,7 @@ function TradingAnalysis() {
 
         <section>
           <h4>Average Sell Price</h4>
-          <p>0.000 USTD/ETH</p>
+          <p>0.000 USTD/Doge</p>
         </section>
 
         <section>
@@ -150,7 +152,7 @@ function TradingAnalysis() {
       <div className="right-box">
         <section>
           <h4>Current Position</h4>
-          <p>0.000 ETH</p>
+          <p>0.000 Doge</p>
         </section>
 
         <section>
@@ -160,7 +162,7 @@ function TradingAnalysis() {
 
         <section>
           <h4>Average Position Price</h4>
-          <p>0.000 USTD/ETH</p>
+          <p>0.000 USTD/Doge</p>
         </section>
 
         <section>
@@ -214,18 +216,12 @@ const chartInfo: Array<ChartInformation> = [
 
   {
     id: 6,
-    label: "Issue Price",
-    text: "The price at which the asset was first issued",
-  },
-
-  {
-    id: 7,
     label: "Historical High",
     text: "The highest price this asset has reached in its \
         history",
   },
   {
-    id: 8,
+    id: 7,
     label: " Historical Low",
     text: "The lowest price this asset has reached in its \
           trading history",
@@ -237,7 +233,7 @@ function ChartInfo() {
 
   function showToolTip(numId: number) {
     const textRef: ChartInformation | undefined = chartInfo.find(
-      (coindetails) => coindetails.id === numId
+      (coindetails) => coindetails.id === numId,
     );
     if (textRef) {
       setidmatch(textRef.id);
@@ -246,7 +242,7 @@ function ChartInfo() {
 
   function hideToolTip(numId: number) {
     const textRef: ChartInformation | undefined = chartInfo.find(
-      (coindetails) => coindetails.id === numId
+      (coindetails) => coindetails.id === numId,
     );
     if (textRef) {
       setidmatch(20);
@@ -255,7 +251,7 @@ function ChartInfo() {
 
   return (
     <div className="info-cover">
-      <h2>ETH</h2>
+      <h2>Doge</h2>
       <div className="info-container">
         <div className="left-container">
           <ul>
@@ -279,47 +275,43 @@ function ChartInfo() {
         </div>
         <div className="middle-container">
           <ul>
-            <li>No.2</li>
-            <li>$190,509.95M</li>
-            <li>6.8612%</li>
-            <li>120,708,156 ETH</li>
-            <li>120,708,156 ETH</li>
-            <li>2014-07-24</li>
-            <li>$0.308</li>
-            <li>$4,891.704697551414</li>
-            <li>$0.4208970069885254</li>
+            <li>No.8</li>
+            <li>$23,517.71M</li>
+            <li>0.847%</li>
+            <li>148,948,826,383 DOGE</li>
+            <li>148,948,826,383 DOGE</li>
+            <li>2013-12-12</li>
+            <li>$0.7375666</li>
+            <li>$0.000085474399384111</li>
           </ul>
         </div>
         <div className="right-container">
           <h3>Intro</h3>
           <p>
-            Ethereum was created in 2015 by Vitalik Buterin, a Russian-Canadian
-            programmer. The platform is based on the principle of
-            decentralization, which means that it is not controlled by any
-            single entity. Ethereum allows users to build and deploy software,
-            commonly in the form of DApps, which are then powered by a global
-            distributed network of computers running Ethereum. The network is
-            decentralized, making it highly resistant to any form of censorship
-            or downtime. In addition, Ethereum is an open-source blockchain
-            platform that runs on the usage of its native currency, called Ether
-            or ETH. All network transaction fees, or gas fees, are paid in ETH.
-            ETH specifically used by the Ethereum blockchain to pay for
-            transactions, and is responsible for powering just about everything
-            that occurs on the network. The Ethereum network can be used by
-            anybody to create and run smart contracts, which are software
-            programs that run autonomously, without user intervention.
-            Ethereum’s growth can be attributed in part to its smart contract
-            capability, which has enabled a growing ecosystem of DApps,
-            non-fungible tokens (NFTs) and more. Ethereum completed its switch
-            from a PoW to a PoS consensus mechanism in September 2022. In a PoS
-            consensus mechanism, users can stake 32 ETH to validate transactions
-            rather than solving computational puzzles using mining equipment,
-            making the process more energy-efficient. The Shanghai upgrade
-            brought in a range of technical enhancements to the Ethereum
-            platform. One of the key features introduced is the ability for
-            users to access and unstake their Ethereum tokens that were
-            previously locked in a smart contract as validators on the Beacon
-            Chain.
+            Dogecoin (DOGE) is a novelty cryptocurrency originally launched as a
+            “memecoin” within the cryptocurrency community. Over time, however,
+            Dogecoin has grown into a large blockchain network and is one of the
+            most popular altcoins available in the market. There is also a
+            serious basis and reason for the creation and development of
+            Dogecoin. Co-founders, Jackson Palmer and Billy Markus, two software
+            engineers by professional background and experience, wanted to make
+            cryptocurrency accessible to individuals outside of Bitcoin. It was
+            expressed by the founders that the oversaturation and difficulty in
+            mining Bitcoin from the time of its creation to the start of
+            Dogecoin, made it difficult for the common person to participate in
+            the mining process. This was because of limited resources as well as
+            technological experience. Dogecoin was envisioned as an entry for
+            the less experienced to become involved in the crypto industry. The
+            launch of Bitcoin in 2009 catalyzed the creation and launch of many
+            different cryptocurrencies, each offering different use cases and
+            functionality. Dogecoin, however, offers no specific use cases —
+            DOGE was a collaborative effort by the crypto community and is now
+            listed on most major exchange platforms. Dogecoin was originally
+            based on Litecoin and was launched in 2013. Primarily designed to
+            provide a light-hearted means of communicating the basic function of
+            cryptocurrency to mainstream audiences, Dogecoin is based on the
+            “Doge” Shiba Inu meme. DOGE price is updated and available in real
+            time on CryptoNight.
           </p>
         </div>
       </div>

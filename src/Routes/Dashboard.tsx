@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, RefObject } from "react";
-import fundImage from "./assets/fund.jpg";
-import lockImage from "./assets/lock.jpg";
+import fundImage from "../assets/fund.jpg";
+import lockImage from "../assets/lock.jpg";
 
 export default function Dashboard() {
   const [showfund, setshowfund] = useState<boolean>(false);

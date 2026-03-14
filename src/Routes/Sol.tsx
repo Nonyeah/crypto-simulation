@@ -1,8 +1,7 @@
 import { useState, ReactNode } from "react";
-import LineChart from "./LineChartSol";
+import LineChart from "../Charts/lineCharts/LineChartSol";
 import { useNavigate } from "react-router-dom";
-import MiniChartSol from "./MiniChartSol";
-
+import MiniChartSol from "../Charts/barCharts/MiniChartSol";
 
 const chartHouseNav: Array<ChartHouseNav> = [
   { id: 0, name: "Chart" },
@@ -21,7 +20,6 @@ export default function Sol() {
 
   return (
     <>
-    
       <ChartHouse />
       <div className="previous">
         <button onClick={() => navigate("/")}>prev page</button>
@@ -30,15 +28,13 @@ export default function Sol() {
   );
 }
 
-
-
 function ChartHouse() {
   const [infodisplay, setinfodisplay] = useState<string>("chart");
   const [active, setactive] = useState<number>(10);
 
   function selectTab(numId: number) {
     const category: ChartHouseNav | undefined = chartHouseNav.find(
-      (category) => category.id === numId
+      (category) => category.id === numId,
     );
     if (category) {
       setinfodisplay(category.name.toLowerCase());
@@ -211,7 +207,6 @@ const chartInfo: Array<ChartInformation> = [
     tokens. If unlocked token data is unavailable non-publicly accessible tokens are excluded",
   },
 
-  
   {
     id: 4,
     label: "Total Supply",
@@ -238,7 +233,7 @@ function ChartInfo() {
 
   function showToolTip(numId: number) {
     const textRef: ChartInformation | undefined = chartInfo.find(
-      (coindetails) => coindetails.id === numId
+      (coindetails) => coindetails.id === numId,
     );
     if (textRef) {
       setidmatch(textRef.id);
@@ -247,7 +242,7 @@ function ChartInfo() {
 
   function hideToolTip(numId: number) {
     const textRef: ChartInformation | undefined = chartInfo.find(
-      (coindetails) => coindetails.id === numId
+      (coindetails) => coindetails.id === numId,
     );
     if (textRef) {
       setidmatch(20);

@@ -1,8 +1,7 @@
-import { ReactNode, useState } from "react";
-import LineChart from "./LineChartBnb";
+import { useState, ReactNode } from "react";
+import LineChart from "../Charts/lineCharts/LineChartBtc";
 import { useNavigate } from "react-router-dom";
-import MiniChartBnb from "./MiniChartBnb";
-
+import MiniChartBtc from "../Charts/barCharts/MiniChartBtc";
 
 const chartHouseNav: Array<ChartHouseNav> = [
   { id: 0, name: "Chart" },
@@ -16,9 +15,8 @@ type ChartHouseNav = {
   name: string;
 };
 
-export default function Bnb() {
+export default function Btc() {
   const navigate = useNavigate();
-
 
   return (
     <>
@@ -26,11 +24,9 @@ export default function Bnb() {
       <div className="previous">
         <button onClick={() => navigate("/")}>prev page</button>
       </div>
-      </>
-    
+    </>
   );
 }
-
 
 function ChartHouse() {
   const [infodisplay, setinfodisplay] = useState<string>("chart");
@@ -38,7 +34,7 @@ function ChartHouse() {
 
   function selectTab(numId: number) {
     const category: ChartHouseNav | undefined = chartHouseNav.find(
-      (category) => category.id === numId
+      (category) => category.id === numId,
     );
     if (category) {
       setinfodisplay(category.name.toLowerCase());
@@ -89,7 +85,7 @@ function ChartHouse() {
         </div>
         <div className="chart-outside-cover">
           <div className="mini-chart">
-            <MiniChartBnb />
+            <MiniChartBtc />
           </div>
         </div>
       </>
@@ -114,7 +110,7 @@ function TradingAnalysis() {
       <div className="left-box">
         <section>
           <h4>Sum Buy Amount</h4>
-          <p>0.000 BNB</p>
+          <p>0.000 BTC</p>
         </section>
 
         <section>
@@ -124,7 +120,7 @@ function TradingAnalysis() {
 
         <section>
           <h4>Average Buy Price</h4>
-          <p>0.000 USTD/BNB</p>
+          <p>0.000 USTD/BTC</p>
         </section>
 
         <section>
@@ -135,7 +131,7 @@ function TradingAnalysis() {
       <div className="middle-box">
         <section>
           <h4>Sum Sell Amount</h4>
-          <p>0.000 BNB</p>
+          <p>0.000 BTC</p>
         </section>
 
         <section>
@@ -145,7 +141,7 @@ function TradingAnalysis() {
 
         <section>
           <h4>Average Sell Price</h4>
-          <p>0.000 USTD/BNB</p>
+          <p>0.000 USTD/BTC</p>
         </section>
 
         <section>
@@ -156,7 +152,7 @@ function TradingAnalysis() {
       <div className="right-box">
         <section>
           <h4>Current Position</h4>
-          <p>0.000 BNB</p>
+          <p>0.000 BTC</p>
         </section>
 
         <section>
@@ -166,7 +162,7 @@ function TradingAnalysis() {
 
         <section>
           <h4>Average Position Price</h4>
-          <p>0.000 USTD/BNB</p>
+          <p>0.000 USTD/BTC</p>
         </section>
 
         <section>
@@ -210,18 +206,20 @@ const chartInfo: Array<ChartInformation> = [
     text: "Tokens available for tracking including unlocked\
     tokens. If unlocked token data is unavailable non-publicly accessible tokens are excluded",
   },
+
   {
     id: 4,
+    label: "Maximum Supply",
+    text: "The total number of coins that will be issued in an asset's lifetime",
+  },
+  {
+    id: 5,
     label: "Total Supply",
     text: "The total number of tokens created versus the number of \
       total tokens destroyed",
   },
-  { id: 5, label: "Issue Date", text: "Asset initial offering date" },
-  {
-    id: 6,
-    label: "Issue Price",
-    text: "The price at which the first asset was issued",
-  },
+  { id: 6, label: "Issue Date", text: "Asset initial offering date" },
+
   {
     id: 7,
     label: "Historical High",
@@ -241,7 +239,7 @@ function ChartInfo() {
 
   function showToolTip(numId: number) {
     const textRef: ChartInformation | undefined = chartInfo.find(
-      (coindetails) => coindetails.id === numId
+      (coindetails) => coindetails.id === numId,
     );
     if (textRef) {
       setidmatch(textRef.id);
@@ -250,7 +248,7 @@ function ChartInfo() {
 
   function hideToolTip(numId: number) {
     const textRef: ChartInformation | undefined = chartInfo.find(
-      (coindetails) => coindetails.id === numId
+      (coindetails) => coindetails.id === numId,
     );
     if (textRef) {
       setidmatch(20);
@@ -259,7 +257,7 @@ function ChartInfo() {
 
   return (
     <div className="info-cover">
-      <h2>BNB</h2>
+      <h2>BTC</h2>
       <div className="info-container">
         <div className="left-container">
           <ul>
@@ -283,37 +281,42 @@ function ChartInfo() {
         </div>
         <div className="middle-container">
           <ul>
-            <li>No.5</li>
-            <li>$82,005.85M</li>
-            <li>3.136%</li>
-            <li>142,470,828 BNB</li>
-            <li>142,470,828 BNB</li>
-            <li>2017-07-08</li>
-            <li>$0.15</li>
-            <li>$793.3505040971822</li>
-            <li>$0.09610939770936966</li>
+            <li>No.1</li>
+            <li>$1,731,950.49M</li>
+            <li>62.3401%</li>
+            <li>19,854,409 BTC</li>
+            <li>21,000,000 BTC</li>
+            <li>19,854,409 BTC</li>
+            <li>2008-11-01</li>
+            <li>$109,114.88483408831</li>
+            <li>$0.04864654</li>
           </ul>
         </div>
         <div className="right-container">
           <h3>Intro</h3>
           <p>
-            BNB is a cryptocurrency that can be used to trade and pay fees on
-            the Binance cryptocurrency exchange. BNB is also the cryptocurrency
-            coin that powers the BNB Chain ecosystem. As one of the world's most
-            popular utility tokens, BNB is useful to users in a wide range of
-            applications and use cases. BNB was launched through an Initial Coin
-            Offering (or ICO) that took place from June 26th to July 3rd, 2017 -
-            11 days before the Binance Exchange opened for trading. The issue
-            price was 1 ETH for 2,700 BNB or 1 BTC for 20,000 BNB. Although BNB
-            was launched through an ICO, BNB does not provide users with a claim
-            on Binance profits and does not represent an investment in Binance.
-            With various applications both within the BNB Chain ecosystem and
-            beyond, BNB serves numerous purposes. Originally launched as an
-            ERC-20 token on the Ethereum blockchain, BNB has now migrated to the
-            main BNB Chain. Although the initial total supply was set at 200
-            million coins, the supply is gradually decreasing as a result of
-            frequent coin burns. The current price of BNB is updated and
-            available in real-time on Binance.
+            Bitcoin (BTC) is a peer-to-peer cryptocurrency that aims to function
+            as a means of exchange that is independent of any central authority.
+            BTC can be transferred electronically in a secure, verifiable, and
+            immutable way. Launched in 2009, BTC is the first virtual currency
+            to solve the double-spending issue by timestamping transactions
+            before broadcasting them to all of the nodes in the Bitcoin network.
+            The Bitcoin Protocol offered a solution to the Byzantine Generals'
+            Problem with a blockchain network structure, a notion first created
+            by Stuart Haber and W. Scott Stornetta in 1991. Bitcoin’s whitepaper
+            was published pseudonymously in 2008 by an individual, or a group,
+            with the pseudonym “Satoshi Nakamoto”, whose underlying identity has
+            still not been verified. The Bitcoin protocol uses an SHA-256d-based
+            Proof-of-Work (PoW) algorithm to reach network consensus. Its
+            network has a target block time of 10 minutes and a maximum supply
+            of 21 million tokens, with a decaying token emission rate. To
+            prevent fluctuation of the block time, the network's block
+            difficulty is re-adjusted through an algorithm based on the past
+            2016 block times. With a block size limit capped at 1 megabyte, the
+            Bitcoin Protocol has supported both the Lightning Network, a
+            second-layer infrastructure for payment channels, and Segregated
+            Witness, a soft-fork to increase the number of transactions on a
+            block, as solutions to network scalability.
           </p>
         </div>
       </div>
