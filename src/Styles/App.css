@@ -1,59 +1,58 @@
 html {
   box-sizing: border-box;
   font-size: 18px;
-  
 }
 
+.main-top-list::after {
+  content: "\25BE";
+  font-size: 1.3rem;
+}
 
-.burger-menu{
+.burger-menu {
   height: 0;
   width: 0;
   transition: width 1s linear;
-  overflow:hidden;
+  overflow: hidden;
   z-index: 20;
-  position:absolute;
+  position: absolute;
   top: 0;
   right: 2%;
   background-color: #fff;
   display: flex;
-  
 }
 
-
-
-.burger-menu ul{
+.burger-menu ul {
   list-style-type: none;
- width: 90%;
+  width: 90%;
 }
 
-.burger-menu li.outer-list{
+.burger-menu li.outer-list {
   font-size: 1rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin: 8px 0;
   padding: 16px;
   text-transform: capitalize;
   cursor: pointer;
-  position: relative; 
-
+  position: relative;
 }
 
-.burger-menu ul.hidden-list li{
- margin: 10px 5px;
- padding: 8px 0;
- font-size: 0.8rem;
- font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.burger-menu ul.hidden-list li {
+  margin: 10px 5px;
+  padding: 8px 0;
+  font-size: 0.8rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.burger-menu ul.show{
+.burger-menu ul.show {
   display: block;
 }
 
-.burger-menu ul.hide{
+.burger-menu ul.hide {
   display: none;
 }
 
-.topnav span.burger-tab{
- visibility: hidden;
+.topnav span.burger-tab {
+  visibility: hidden;
 }
 
 .topnav {
@@ -62,13 +61,12 @@ html {
   font-size: 1.4rem;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   margin: 20px;
-
 }
 
 .topnav .title,
 .topnav p {
   margin: 30px;
- position: relative;
+  position: relative;
 }
 
 .topnav p span {
@@ -76,46 +74,43 @@ html {
   cursor: pointer;
 }
 
-
-.bottomnav{
+.bottomnav {
   background-color: #fff;
   margin: 8px;
   display: none;
-    
 }
 .footermenu {
   margin: 30px 15px;
 }
 
-.desktop-bottom-nav ul{
-display: flex;
-justify-content: space-between;
-margin: 20px;
-padding: 0;
-list-style-type: none;
-cursor: pointer;
+.desktop-bottom-nav ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 0;
+  list-style-type: none;
+  cursor: pointer;
 }
 
-.desktop-bottom-nav li.outer{
+.desktop-bottom-nav li.outer {
   margin: 10px 0;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 1rem;
 }
 
-.outer .nested{
+.outer .nested {
   display: block;
   margin: 20px 0;
 }
 
 .outer .nested li {
   margin: 15px 0;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 0.8rem;
 }
 
 .outer .nested li:hover {
   color: #030257;
-
 }
 
 .bottomnav button {
@@ -130,7 +125,6 @@ cursor: pointer;
   text-align: left;
   color: #000;
 }
-
 
 .bottomnav ul {
   list-style-type: none;
@@ -151,61 +145,76 @@ cursor: pointer;
 .divshow {
   display: block;
   background-color: #fff;
-  color: #000
+  color: #000;
 }
 
 .dashboard-container {
   margin: 20px 15px;
-  border: 1px solid grey; 
+  border: 1px solid grey;
   border-radius: 10px;
   padding: 16px;
 }
 
 .dashboard-inner-container {
   display: flex;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Arial, Helvetica, tahoma, verdana, sans-serif";
   align-items: center;
   justify-content: space-between;
+  margin: 20px;
+  cursor: pointer;
+}
+.user-id-list {
+  list-style-type: none;
+  font-size: 1rem;
+}
+
+.user-id-list li:first-child {
+  color: #a9a9a9;
 }
 
 .dashboard-home .home-icon {
-  font-size: 3rem;
-  margin: 0 2px 0 20px;
-}
-
-.dashboard-home .d-text {
-  font-size: 1.4rem;
-  margin: 0 2px 0 20px;
-}
-
-.user-details .user-icon {
   font-size: 1.6rem;
   margin: 0 2px 0 20px;
 }
 
+.dashboard-home .d-text {
+  font-size: 1.1rem;
+  margin: 0 2px 0 20px;
+}
+
+p.border {
+  height: 70px;
+  width: 20px;
+  border-right: 1px solid black;
+}
+
+.user-details .user-icon {
+  font-size: 1.4rem;
+}
+
 .user-details .u-text {
-  font-size: 1.2rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  margin: 0 20px 0 20px;
+  font-size: 1rem;
+  font-family: "Arial, Helvetica, tahoma, verdana, sans-serif";
+  margin: 0 10px 0 10px;
 }
 
 .complete-account h3 {
   text-transform: capitalize;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Arial, Helvetica, tahoma, verdana, sans-serif";
   font-size: 1.2rem;
   margin: 40px 20px;
   text-align: left;
 }
 
-.complete-account img {
+.complete-account table td img {
   display: block;
-  width: 10%;
+  width: 15%;
   height: auto;
 }
 
 .complete-account .user-icon {
   font-size: 2rem;
-  margin: 0 10px;
+  margin: 10px;
 }
 
 .complete-account table {
@@ -214,7 +223,7 @@ cursor: pointer;
 
 .complete-account td {
   margin: 30px 0;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: helvetica, arial, Tahoma, verdana, sans-serif;
   text-transform: capitalize;
   font-size: 0.9rem;
   color: #535252;
@@ -227,14 +236,14 @@ cursor: pointer;
   border: none;
   outline: none;
   text-transform: capitalize;
-  cursor:pointer;
+  cursor: pointer;
   background-color: #000;
-  color:#fff;
+  color: #fff;
   border-radius: 10px;
 }
 
 .complete-account td.green {
-  color: #BDB76B;
+  color: #bdb76b;
   font-weight: bold;
   font-size: 0.8rem;
 }
@@ -252,7 +261,7 @@ cursor: pointer;
 }
 
 .outer-fund-container {
-  background-color: #BDB76B;
+  background-color: #bdb76b;
   width: 100%;
   height: 0;
   overflow: hidden;
@@ -272,7 +281,7 @@ cursor: pointer;
 
 .fund-account h3 {
   text-align: center;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: helvetica, arial, Tahoma, sans-serif;
   text-transform: capitalize;
   font-size: 1rem;
   margin: 0 0 20px 0;
@@ -287,7 +296,7 @@ cursor: pointer;
   justify-content: space-around;
 }
 
- button.fund-tab-buttons {
+button.fund-tab-buttons {
   padding: 16px;
   border: none;
   outline: none;
@@ -299,7 +308,7 @@ cursor: pointer;
   font-weight: bold;
 }
 button.active {
-  background-color: #000; 
+  background-color: #000;
   color: #fff;
 }
 
@@ -333,7 +342,7 @@ p.learn-more {
 
 .fund-text {
   text-align: center;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
   font-size: 1rem;
   color: #fff;
 }
@@ -343,24 +352,21 @@ p.learn-more {
 
 .balance-container {
   text-align: left;
-  border: 1px solid grey; 
+  border: 1px solid grey;
   border-radius: 20px;
   padding: 16px;
- 
 }
 
 .balance-container .coin {
   text-transform: uppercase;
-  display:inline-block;
+  display: inline-block;
   width: 60px;
 }
 
 .balance-container h5 {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
   font-size: 1.2rem;
 }
-
-
 
 p.currency {
   margin: 10px;
@@ -369,16 +375,15 @@ p.currency {
 }
 
 .balance-container .message-container {
-
-margin: 20px 0;
-font-size: 0.9rem;
-font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 20px 0;
+  font-size: 0.9rem;
+  font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
 }
 
-.balance-container p.text{
+.balance-container p.text {
   font-size: 0.9rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  text-align: center
+  font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
+  text-align: center;
 }
 
 .balance-container .static-buttons {
@@ -387,8 +392,8 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 30px 0;
 }
 
-.balance-container button.active{
-  background-color: #BDB76B;
+.balance-container button.active {
+  background-color: #bdb76b;
 }
 
 .balance-container button {
@@ -396,14 +401,14 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: none;
   outline: none;
   text-transform: capitalize;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
   font-size: 1rem;
 }
-.balance-container p.currency button::after{
-  content: '\25BC';
+.balance-container p.currency button::after {
+  content: "\25BC";
 }
 
 .select-crypto-container {
@@ -413,11 +418,10 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   height: 300px;
   margin: 20px 10px;
   overflow: hidden;
-
 }
 
 .select-crypto {
-  background-color: #BDB76B;
+  background-color: #bdb76b;
   width: 100%;
   height: 0;
   overflow-y: scroll;
@@ -425,8 +429,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   transition: height 1.5s ease-out;
   border-radius: 15px;
   padding: 16px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", "sans-serif"
- 
+  font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
 }
 
 .select-crypto p {
@@ -449,7 +452,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #fff;
   font-weight: bold;
   font-size: 1.2rem;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .select-crypto button {
@@ -462,62 +465,59 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   height: auto;
   cursor: pointer;
   display: inline-block;
-  border-radius: 10px
+  border-radius: 10px;
 }
 
 .select-crypto button:hover {
-  color: #BDB76B;
+  color: #bdb76b;
 }
-.link-remover{
- text-decoration: none;
- color: #000;
-}
-
-.markets-container{
- 
- border: 1px solid grey; 
- border-radius: 20px;
- padding: 16px;
- color:#000;
+.link-remover {
+  text-decoration: none;
+  color: #000;
 }
 
-.markets-container h5{
+.markets-container {
+  border: 1px solid grey;
+  border-radius: 20px;
+  padding: 16px;
+  color: #000;
+}
+
+.markets-container h5 {
   font-size: 1.2rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
 }
 
 .markets-container .buttons-container {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   margin: 0;
   padding: 0;
 }
 
-.buttons-container button{
+.buttons-container button {
   padding: 16px;
   border: none;
   outline: none;
   text-transform: capitalize;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
   font-size: 1rem;
-
 }
-.buttons-container button.active{
-  background-color: #BDB76B;
+.buttons-container button.active {
+  background-color: #bdb76b;
 }
 
-
-.buttons-container li{
+.buttons-container li {
   list-style-type: none;
 }
 
 .markets-container {
   margin: 10px 15px;
 }
-.markets-container h4{
+.markets-container h4 {
   margin: 40px;
 }
 
@@ -526,8 +526,9 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-spacing: 30px;
 }
 
-.markets-content td, th{
-padding: 16px 0;
+.markets-content td,
+th {
+  padding: 16px 0;
   width: 24%;
   text-align: center;
   text-transform: uppercase;
@@ -536,161 +537,154 @@ padding: 16px 0;
 .markets-content img {
   width: 10%;
   height: auto;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.markets-content .string-content p{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.markets-content .string-content p {
+  font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
   text-transform: capitalize;
-
 }
 
-
-.markets-container .arrow-up, .markets-container .arrow-down{
+.markets-container .arrow-up,
+.markets-container .arrow-down {
   margin: 0 10px;
   cursor: pointer;
 }
 
 .markets-container .arrow-down::after {
-  content: '\25BC';
+  content: "\25BC";
 }
 
-.markets-container .arrow-up::after{
-  content: '\25B2';
+.markets-container .arrow-up::after {
+  content: "\25B2";
 }
 
-.coin-container{
+.coin-container {
   margin: 30px 15px;
-
 }
-
 
 .coin-topnav ul {
   border-top: 1px solid #d3d3d3;
-  border-bottom: 1px solid #d3d3d3;;
+  border-bottom: 1px solid #d3d3d3;
   display: flex;
   justify-content: space-around;
   list-style-type: none;
-padding: 20px 0;
-cursor:pointer
+  padding: 20px 0;
+  cursor: pointer;
 }
 
 .coin-topnav li {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1rem;
   color: #000;
   text-transform: capitalize;
   font-weight: bold;
 }
 
-
-.coin-topnav .innerlist.showinner{
-  display:block;
+.coin-topnav .innerlist.showinner {
+  display: block;
   z-index: 100;
-  position:absolute;
+  position: absolute;
   padding: 16px;
-background-color: #3a3838;
+  background-color: #3a3838;
 }
 
-.coin-topnav .innerlist.showinner li{
+.coin-topnav .innerlist.showinner li {
   margin: 16px 0;
   color: #fff;
   font-size: 0.8rem;
 }
 
-.coin-topnav .innerlist.showinner li:hover{
-  color: #c1ddf7
+.coin-topnav .innerlist.showinner li:hover {
+  color: #c1ddf7;
 }
 
-.coin-topnav .innerlist.hideinner{
-  display:none;
+.coin-topnav .innerlist.hideinner {
+  display: none;
 }
 
-.line-chart-container{
+.line-chart-container {
   width: 100%;
   height: auto;
   margin: 20px auto;
 }
 
-.previous{
+.previous {
   margin: 30px 0;
 }
 
-.previous button{
-  cursor:pointer;
+.previous button {
+  cursor: pointer;
   padding: 16px;
   border: none;
   outline: none;
   background-color: #000;
   border-radius: 10px;
   color: #fff;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
   text-transform: capitalize;
   font-size: 0.8rem;
 }
 
-.chart-nav{
+.chart-nav {
   margin: 40px 15px;
-
 }
 
-.chart-nav ul{
+.chart-nav ul {
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: space-between;
   list-style-type: none;
- 
 }
-.chart-nav ul li{
+.chart-nav ul li {
   width: 20%;
-
 }
 
-.chart-nav button.active{
-  background-color: #BDB76B;
+.chart-nav button.active {
+  background-color: #bdb76b;
 }
 
-.chart-nav ul button{
+.chart-nav ul button {
   font-size: 0.9rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
   text-transform: capitalize;
   border: none;
   outline: none;
   padding: 16px;
-  cursor:pointer;
+  cursor: pointer;
   width: 100%;
   height: 100%;
 }
 
-.chart-outside-cover{
+.chart-outside-cover {
   margin: 40px 15px;
 }
 
-.previous {margin: 40px 20px;}
-
-.info-cover h2{
- text-indent: 5%;
- margin-bottom: 20px;
-
+.previous {
+  margin: 40px 20px;
 }
 
-.info-cover h3{
-margin: 0px 
+.info-cover h2 {
+  text-indent: 5%;
+  margin-bottom: 20px;
+}
+
+.info-cover h3 {
+  margin: 0px;
 }
 
 .info-cover .info-container {
   display: flex;
   justify-content: space-between;
-
 }
 
-.info-container ul{
+.info-container ul {
   list-style-type: none;
 }
 
 .info-container li {
-  cursor:pointer;
+  cursor: pointer;
   margin: 20px 0;
   border-bottom: 1px dotted black;
   position: relative;
@@ -698,24 +692,21 @@ margin: 0px
 
 .info-container .right-container {
   width: 50%;
-font-size: 0.9rem;
-font-family: "Arial, Helvetica, sans-serif";
-line-height: 170%;
-padding: 0 16px;
-}
-
-.info-container .left-container, .info-container .middle-container{
   font-size: 0.9rem;
-font-family:"Arial, Helvetica, sans-serif";
-width: 25%;
-padding: 0 16px;
-
-
+  font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
+  line-height: 170%;
+  padding: 0 16px;
 }
 
+.info-container .left-container,
+.info-container .middle-container {
+  font-size: 0.9rem;
+  font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
+  width: 25%;
+  padding: 0 16px;
+}
 
-
-.left-container  span.tooltip{
+.left-container span.tooltip {
   padding: 16px;
   background-color: #3a3838;
   color: #fff;
@@ -724,13 +715,11 @@ padding: 0 16px;
   bottom: 100%;
   left: 40%;
   margin-left: -60px;
- display:none;
-    width: auto;
-    height: auto;
+  display: none;
+  width: auto;
+  height: auto;
   z-index: 1;
-
 }
-
 
 .left-container span.tooltip::after {
   content: "";
@@ -748,248 +737,346 @@ padding: 0 16px;
 }
 
 .left-container span.hidetip {
-  display:none;
+  display: none;
 }
-
-
 
 .chart-outside-cover .mini-chart {
   margin: 20px 0;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
- 
 }
 
- .chart-description {
+.chart-description {
   border-spacing: 30px;
   width: 50%;
- 
 }
 
- .doughnut-container{
+.doughnut-container {
   width: 45%;
-  
 }
- .chart-description th, .chart-description td{
-padding: 16px; 
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-font-size: 0.9rem;
+.chart-description th,
+.chart-description td {
+  padding: 16px;
+  font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
+  font-size: 0.9rem;
 }
 
-.chart-description .legend-box{
+.chart-description .legend-box {
   display: flex;
   flex-direction: column;
- 
 }
 
-.legend-box .top-section, .legend-box .bottom-section{
+.legend-box .top-section,
+.legend-box .bottom-section {
   display: flex;
-justify-content: space-between;
-
+  justify-content: space-between;
 }
 
-.legend-box section{
+.legend-box section {
   text-align: center;
 }
 
 .legend-box p {
   width: 20px;
   height: 20px;
-  
- 
 }
 
-.legend-box .ls, .legend-box .lb{
+.legend-box .ls,
+.legend-box .lb {
   background-color: lightblue;
 }
 
-.legend-box .ms, .legend-box .mb {
+.legend-box .ms,
+.legend-box .mb {
   background-color: lightcoral;
 }
 
-.legend-box .ss, .legend-box .sb {
+.legend-box .ss,
+.legend-box .sb {
   background-color: orange;
 }
 
-.legend-box span{
+.legend-box span {
   text-transform: capitalize;
   font-size: 0.8rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
 }
 
-
 .outer-box {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   font-size: 0.9rem;
 }
 
-.error-container p{
+.error-container p {
   text-align: center;
   font-size: 1.1rem;
-  font-family: Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
 }
 
-.error-container .previous{
+.error-container .previous {
   margin: 50px;
 }
 
+@media only screen and (min-width: 1200px){
+  .complete-account table td img {
+  display: block;
+  width: 10%;
+  height: auto;
+}
 
-@media only screen and (max-width: 700px) {
+.complete-account .user-icon {
+  font-size: 2rem;
+  margin: 10px;
+}
+
+}
+
+@media only screen and (max-width: 992px) and (min-width: 800px) {
+  .user-id-list {
+    list-style-type: none;
+    font-size: 0.85rem;
+  }
+
+  .dashboard-home .home-icon {
+    font-size: 1.8rem;
+    margin: 0 5px 0 0;
+  }
+  .dashboard-inner-container {
+    font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
+  }
+
+  .dashboard-home .d-text {
+    font-size: 0.85rem;
+    margin: 0 5px;
+  }
+
+  p.border {
+    height: 70px;
+    border-right: 1px solid black;
+  }
+
+  .user-details .user-icon {
+    font-size: 1.2rem;
+    margin: 0 5px;
+  }
+
+  .user-details .u-text {
+    font-size: 0.85rem;
+    margin: 0;
+  }
+
+  .complete-account table td img {
+    display: block;
+    width: 20%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 799px) {
+  .user-id-list {
+    list-style-type: none;
+    font-size: 0.8rem;
+  }
+
+  .dashboard-home .home-icon {
+    font-size: 1.8rem;
+    margin: 0 5px 0 0;
+  }
+
+  .dashboard-home .d-text {
+    font-size: 1rem;
+    margin: 0 5px;
+  }
+
+  p.border {
+    height: 70px;
+    border-right: 1px solid black;
+  }
+
+  .user-details .user-icon {
+    font-size: 1.2rem;
+    margin: 0 5px;
+  }
+
+  .user-details .u-text {
+    font-size: 0.9rem;
+    font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
+    margin: 0;
+  }
   .bottomnav {
     display: block;
   }
 
-  span.plus-opener{
+  span.plus-opener {
     text-align: right;
     font-size: 1.1rem;
     position: absolute;
-   left: 90%;
+    left: 90%;
   }
 
   .desktop-bottom-nav {
     display: none;
   }
 
-  .topnav span.burger-tab{
+  .topnav span.burger-tab {
     visibility: visible;
   }
 
-  .burger-menu p.close{
+  .burger-menu p.close {
     cursor: pointer;
     font-size: 1.3rem;
     margin: 20px;
-  } 
+  }
 
-  .dashboard-inner-container{
+  .dashboard-inner-container {
     flex-direction: column;
   }
-  .dashboard-inner-container .dashboard-home, .dashboard-inner-container .user-details {
+  .dashboard-inner-container .dashboard-home,
+  .dashboard-inner-container .user-details,
+  .dashboard-container .user-id-list {
     width: 100%;
-    
   }
 
+  .dashboard-inner-container .border {
+    display: none;
+  }
   .dashboard-home .home-icon {
     font-size: 1.8rem;
     margin: 20px;
   }
-  
+
   .dashboard-home .d-text {
     font-size: 1.2rem;
     margin: 20px;
   }
 
-
   .user-details .user-icon {
     font-size: 1.4rem;
     margin: 0 2px 0 20px;
   }
-  
+
   .user-details .u-text {
     font-size: 1.1rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
     margin: 0 20px 0 20px;
   }
 
-  
   .select-crypto button {
     width: 100%;
   }
-  .select-crypto ul{
+  .select-crypto ul {
     width: 80%;
     margin: 0 auto;
   }
 
   .select-crypto .close {
     font-size: 0.9rem;
-    
   }
-  .select-crypto p{
+  .select-crypto p {
     text-align: center;
     text-transform: capitalize;
   }
 
-  .markets-container{
+  .markets-container {
     margin: 20px 10px;
   }
 
-  .markets-container h4{
+  .markets-container h4 {
     font-size: 1rem;
   }
 
-
-  .buttons-container li button{
-    font-size: 0.8rem;
-  }
-  
-  .complete-account .user-icon {
-    font-size: 2rem;
-    margin-left: 0;
-  
+  .complete-account h3 {
+    font-size: 0.9rem;
+    text-align: center;
   }
 
-  .complete-account img {
-    width: 30%;
+  .complete-account table td .user-icon {
+    font-size: 2.5rem;
+    margin-left: 10px;
+  }
+
+  .complete-account table td img {
+    display: block;
+    width: 28%;
     height: auto;
   }
 
-  
-.outer-fund-cover {
-  height: 410px;
- 
-}
-
-  .line-chart-container{
-    width: 100%;
-    
+  .outer-fund-cover {
+    height: 410px;
   }
 
-  .balance-container .message-container, .balance-container p.text {
-    font-size: 0.8rem;
-    }
-    
-.balance-container .static-buttons {
-  justify-content: space-betwen;
-  margin: 30px 0;
-}
-.balance-container .static-buttons button{
-  padding: 10px;
-  font-size: 0.75rem;
-}
+  .line-chart-container {
+    width: 100%;
+  }
 
-.fund-account ul {
+  .balance-cover .balance-container {
+    font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
+  }
 
-  justify-content: space-between;
-}
+  .balance-container .message-container,
+  .balance-container p.text {
+    font-size: 0.75rem;
+  }
 
-.fund-account .fund-tab-buttons {
-  padding: 16px 10px;
-  margin: 20px 15px;
+  .balance-cover .balance-container h5 {
+    font-size: 1rem;
+  }
 
-}
-  
-.markets-content table {
-  border-spacing: 5px;
-  margin-left: -11px;
-}
+  .balance-cover .coin,
+  .amount,
+  .currency,
+  .text {
+    font-size: 1rem;
+  }
 
-.markets-content td, th{
-  padding: 16px 0;
+  .balance-container .static-buttons {
+    justify-content: space-betwen;
+    margin: 30px 0;
+  }
+
+  .fund-account ul {
+    justify-content: space-between;
+  }
+
+  .fund-account .fund-tab-buttons {
+    padding: 16px 10px;
+    margin: 20px 15px;
+  }
+
+  .markets-content table {
+    border-spacing: 5px;
+    margin-left: -11px;
+  }
+
+  .markets-container {
+    font-family: Arial, Helvetica, tahoma, verdana, "sans-serif";
+  }
+
+  .markets-container h5 {
+    font-size: 1rem;
+  }
+
+  .markets-container .buttons-container li button {
+    font-size: 0.7rem;
+    padding: 10px;
+  }
+  .markets-content td,
+  th {
+    padding: 16px 0;
     width: 20%;
     font-size: 0.7rem;
   }
 
-
   .markets-content img {
     width: 20%;
     height: auto;
-
   }
 
-  .markets-container .arrow-up, .markets-container .arrow-down{
+  .markets-container .arrow-up,
+  .markets-container .arrow-down {
     margin: 0 3px;
-
   }
 
   .coin-container {
@@ -997,141 +1084,199 @@ justify-content: space-between;
   }
 
   .coin-topnav li {
-  font-size: 0.75rem;
-    
+    font-size: 0.75rem;
   }
 
-  .coin-topnav .innerlist.showinner li{
+  .coin-topnav .innerlist.showinner li {
     margin: 16px 0;
     color: #fff;
     font-size: 0.7rem;
   }
 
-  
-
-  .chart-description table{
+  .chart-description table {
     border-spacing: 10px;
     margin: 0 auto;
-   
   }
 
-   .chart-description th, .chart-description td{
-  padding: 5px; 
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 0.7rem;
+  .chart-description th,
+  .chart-description td {
+    padding: 5px;
+    font-family: "Arial, Helvetica, tahoma, verdana, sans-serif";
+    font-size: 0.7rem;
   }
 
-  .legend-box .top-section, .legend-box .bottom-section{
-  justify-content: space-between;
+  .legend-box .top-section,
+  .legend-box .bottom-section {
+    justify-content: space-between;
     font-size: 0.4rem;
-    
   }
 
-  .chart-nav{
+  .chart-nav {
     margin: 40px 0;
   }
 
+  .chart-nav ul li {
+    width: 23%;
+  }
 
-  .chart-nav ul li{
-  width: 23%;
-}
+  .chart-nav ul button {
+    font-size: 0.7rem;
+    padding: 16px 8px;
+  }
 
+  .chart-outside-cover .line-chart-container {
+    position: "relative";
+    width: "100%";
+    height: "500px";
+  }
 
-.chart-nav ul button{
-  font-size: 0.7rem;
-  padding: 16px 8px;
+  .info-cover .info-container {
+    height: 400px;
+    font-size: 0.8rem;
+    flex-direction: column;
+    overflow: scroll;
+    scrollbar-width: thin;
+  }
 
-}
+  .info-container .right-container {
+    width: 100%;
+    font-size: 0.9rem;
+    font-family: "Arial, Helvetica, sans-serif";
+    line-height: 170%;
+    padding: 10px;
+  }
 
-.chart-outside-cover .line-chart-container {
-  position: "relative";
-   width: "100%";
-    height: "500px"; 
-}
+  .info-container .left-container,
+  .info-container .middle-container {
+    font-size: 0.9rem;
+    font-family: "Arial, Helvetica, sans-serif";
+    width: 100%;
+  }
 
+  .left-container .tooltip {
+    font: 0.7rem arial;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 100%;
+    height: auto;
+    display: none;
+    z-index: 1;
+  }
 
-.info-cover .info-container {
-height: 400px;
-font-size: 0.8rem;
-flex-direction: column;
-overflow: scroll;
-scrollbar-width: thin;
-}
+  .left-container .showtip {
+    display: block;
+  }
 
-.info-container .right-container {
-  width: 100%;
-font-size: 0.9rem;
-font-family: "Arial, Helvetica, sans-serif";
-line-height: 170%;
-padding: 10px;
-}
+  .left-container .hidetip {
+    display: none;
+  }
 
-.info-container .left-container, .info-container .middle-container {
-  font-size: 0.9rem;
-font-family: "Arial, Helvetica, sans-serif";
-width: 100%;
-
-}
-
-
-.left-container .tooltip{
-  font: 0.7rem arial;
-  position: absolute;
-  bottom: 0;
-  left: 10%;
-  width: 100%;
-  height: auto;
-  display:none; 
-  z-index: 1;
-}
-
-.left-container .showtip {
-  display: block;
-
-}
-
-.left-container .hidetip {
-  display:none;
-}
-
-
-.outer-box {
-  flex-direction: column;
-  font-size: 0.75rem;
-}
-
+  .outer-box {
+    flex-direction: column;
+    font-size: 0.75rem;
+  }
 
   .chart-outside-cover .mini-chart {
-    display:flex;
+    display: flex;
 
     flex-direction: column;
   }
 
-  .mini-chart .doughnut-container, .mini-chart .chart-description {
+  .mini-chart .doughnut-container,
+  .mini-chart .chart-description {
     width: 100%;
     margin: 20px 0;
-    
   }
 
-  
   .error-container {
     margin: 20px;
-    border: 1px solid grey; 
+    border: 1px solid grey;
     border-radius: 10px;
     padding: 16px;
   }
 
-  .error-container p{
+  .error-container p {
     margin: 40px 20px;
     font-size: 1rem;
     text-align: left;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-
+    font-family: Georgia, "Times New Roman", Times, serif;
   }
-
-
-  
 }
 
 
 
+@media only screen and (min-width: 501px) and (max-width: 798px) {
+
+.complete-account table td .user-icon {
+  font-size: 2.5rem;
+  margin-left: 10px;
+}
+
+.complete-account table td img {
+  display: block;
+  width: 28%;
+  height: auto;
+}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 500px) {
+   .complete-account table td .user-icon {
+    font-size: 2rem;
+    margin-left: 5px;
+  }
+
+  .complete-account table td img {
+    display: block;
+    width: 40%;
+    height: auto;
+  }
+}
+
+
+@media only screen and (min-width: 200px) and (max-width: 400px) {
+  .topnav {
+    font-size: 1.4rem;
+    margin: 0;
+  }
+
+  .complete-account table td .user-icon {
+    font-size: 2rem;
+    margin-left: 2px;
+  }
+
+  .complete-account table td img {
+    display: block;
+    width: 40%;
+    height: auto;
+  }
+
+  .complete-account td.not-completed button {
+    padding: 12px 10px;
+    font-size: 0.6rem;
+  }
+  .balance-container .static-buttons button {
+    padding: 10px;
+    font-size: 0.6rem;
+  }
+
+  .markets-content td,
+  th {
+    padding: 10px 0;
+    font-size: 0.65rem;
+  }
+
+  .markets-container .buttons-container li button {
+    font-size: 0.65rem;
+  }
+
+  .markets-container .arrow-up,
+  .markets-container .arrow-down {
+    margin: 0;
+  }
+
+  .markets-content table {
+    border-spacing: 5px;
+    margin-left: 0;
+  }
+}

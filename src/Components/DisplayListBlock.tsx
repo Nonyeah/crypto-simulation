@@ -8,12 +8,12 @@ export default function DisplayListBlock({
 }: MainTopNav) {
   const [showpanel, setshowpanel] = useState<boolean>(false);
   return (
-    <li
+    <li className="main-top-list"
       onMouseOver={() => setshowpanel(true)}
       onMouseOut={() => setshowpanel(false)}
       key={id}
     >
-      {labelName}
+      {labelName} 
       <ul className={`innerlist ${showpanel ? "showinner" : "hideinner"}`}>
         <li>
           {content.map((item, id) => (

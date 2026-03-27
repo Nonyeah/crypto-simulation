@@ -41,6 +41,20 @@ export default function Dashboard() {
               <span className="u-text">User 345-789T</span>
             </p>
           </div>
+          <p className="border"></p>
+          <ul className="user-id-list">
+            <li>User ID</li>
+            <li>345-789T</li>
+          </ul>
+
+          <ul className="user-id-list">
+            <li>VIP Level</li>
+            <li>Regular User</li>
+          </ul>
+          <ul className="user-id-list">
+            <li>User type </li>
+            <li>Personal</li>
+          </ul>
         </div>
 
         <div className="complete-account">
@@ -58,14 +72,15 @@ export default function Dashboard() {
               </tr>
               <tr>
                 <td rowSpan={2}>
-                  <img src={fundImage}  alt="money icon" />
+                  <img src={fundImage} alt="money icon" />
                 </td>
                 <td>Fund Your Account</td>
               </tr>
               <tr>
-                <td
-                  className="green not-completed">
-                  <button type="button"  onClick={() => setshowfund(true)}>not completed &gt;</button>
+                <td className="green not-completed">
+                  <button type="button" onClick={() => setshowfund(true)}>
+                    not completed &gt;
+                  </button>
                 </td>
               </tr>
               <tr>
