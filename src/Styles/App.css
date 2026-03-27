@@ -1231,6 +1231,12 @@ th {
     width: 40%;
     height: auto;
   }
+
+  .balance-container .static-buttons button {
+    padding: 10px;
+    font-size: 0.7rem;
+    margin: 0 5px;
+  }
 }
 
 
@@ -1258,6 +1264,7 @@ th {
   .balance-container .static-buttons button {
     padding: 10px;
     font-size: 0.6rem;
+    margin: 0 5px;
   }
 
   .markets-content td,
