@@ -91,17 +91,21 @@ export default function Layout() {
   const domRef = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {
+    let interval: any;
     if (showmenu) {
-      setTimeout(() => {
+      interval = setTimeout(() => {
         domRef.current!.style.width = "100%";
         domRef.current!.style.height = "auto";
       }, 1000);
     } else {
-      setTimeout(() => {
+      interval = setTimeout(() => {
         domRef.current!.style.width = "0";
         domRef.current!.style.height = "auto";
       }, 1000);
     }
+    return () => {
+      clearInterval(interval);
+    };
   }, [showmenu]);
 
   const burgerNav = burgerMenu.map((category) => (
