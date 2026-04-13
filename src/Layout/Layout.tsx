@@ -4,25 +4,25 @@ import { mainTopNav } from "../Components/TopNavData";
 import DisplayListBlock from "../Components/DisplayListBlock";
 
 interface NavObjects {
-  id: number;
+  id?: number;
   tabName: string;
   links: string[];
 }
 
 const bottomNav: NavObjects[] = [
   {
-    id: 0,
+    id: 1,
     tabName: "Company",
     links: ["About Us", "Enquiries", "Careers", "Press"],
   },
   {
-    id: 1,
+    id: 2,
     tabName: "Support",
     links: ["Support Center", "24/7 Chat Support", "Fees", "Trading Rules"],
   },
-  { id: 2, tabName: "Legal", links: ["Terms", "Privacy Notice"] },
+  { id: 3, tabName: "Legal", links: ["Terms", "Privacy Notice"] },
   {
-    id: 3,
+    id: 4,
     tabName: "Compliance",
     links: [
       "Risk Warning",
@@ -30,7 +30,7 @@ const bottomNav: NavObjects[] = [
       "Licences & Registrations",
     ],
   },
-  { id: 4, tabName: "Products", links: ["Spot", "OCBS", "Convert", "NFT"] },
+  { id: 5, tabName: "Products", links: ["Spot", "OCBS", "Convert", "NFT"] },
 ];
 
 interface BurgerMenu {
@@ -55,7 +55,6 @@ const burgerMenu: BurgerMenu[] = [
       "Submit Live Chat",
       "Support Centre",
       "Trading Fees",
-      "Trading Fees",
       "Trading Rule",
     ],
   },
@@ -78,8 +77,8 @@ function CreateList({ id, name, content }: BurgerMenu) {
         {content.length && !objId ? "+" : content.length && objId ? "-" : ""}
       </span>
       <ul className={`hidden-list ${objId ? "show" : "hide"}`}>
-        {content.map((innerlist, index) => (
-          <li key={index}>{innerlist}</li>
+        {content.map((innerlist) => (
+          <li key={innerlist}>{innerlist}</li>
         ))}
       </ul>
     </li>
@@ -139,7 +138,7 @@ export default function Layout() {
           </span>
         </p>
         <div ref={domRef} className="burger-menu">
-          <ul>{burgerNav}</ul>
+          <nav aria-label="browser navigation"><ul>{burgerNav}</ul></nav>
           <p onClick={showMenu} className="close">
             &#9932;
           </p>
@@ -148,7 +147,7 @@ export default function Layout() {
 
       <div className="coin-container">
         <div className="coin-topnav">
-          <ul>{navlist}</ul>
+          <nav aria-label="desktop navigation"><ul>{navlist}</ul></nav>
         </div>
       </div>
 
@@ -169,7 +168,7 @@ export default function Layout() {
   );
 }
 
-function NewTabMenu({ id, tabName, links }: NavObjects) {
+function NewTabMenu({tabName, links }: NavObjects) {
   const [isOpen, setIsOpen] = useState(false);
 
   function displayTab() {
@@ -177,7 +176,7 @@ function NewTabMenu({ id, tabName, links }: NavObjects) {
   }
 
   return (
-    <div key={id} className="bottomnav">
+    <div className="bottomnav">
       <button type="button" onClick={displayTab}>
         <span>{tabName}</span>
         <span className="plus-opener">{isOpen ? "-" : "+"}</span>
@@ -185,7 +184,7 @@ function NewTabMenu({ id, tabName, links }: NavObjects) {
       <div className={isOpen ? "divshow" : "divhide"}>
         <ul>
           {links.map((link) => (
-            <li>{link}</li>
+            <li key={link}>{link}</li>
           ))}
         </ul>
       </div>
@@ -196,7 +195,7 @@ function NewTabMenu({ id, tabName, links }: NavObjects) {
 function DesktopTabMenu() {
   const desktopNav = bottomNav.map((category) => {
     return (
-      <li className="outer" key={category.id}>
+      <li className="outer" key={category.tabName}>
         {category.tabName}
         <ul className="nested">
           {category.links.map((submenu) => (
@@ -204,11 +203,12 @@ function DesktopTabMenu() {
           ))}
         </ul>
       </li>
+     
     );
   });
   return (
     <div className="desktop-bottom-nav">
-      <ul>{desktopNav}</ul>
+      <nav><ul>{desktopNav}</ul></nav>
     </div>
   );
 }
