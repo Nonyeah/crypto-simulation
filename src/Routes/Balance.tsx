@@ -112,7 +112,7 @@ export default function Balance() {
           <p className="currency">
             <span className="amount">0.00</span>{" "}
             <span className="coin">{coin}</span>{" "}
-            <button onClick={() => setshowcurrency(true)} type="button">
+            <button aria-label="select crypto" onClick={() => setshowcurrency(true)} type="button">
               {" "}
             </button>
           </p>
@@ -206,7 +206,7 @@ function ShowBalance({
   ));
 
   return (
-    <div className="select-crypto-container">
+    <div aria-label="crypto coin container" className="select-crypto-container">
       <div ref={currencyRef} className="select-crypto">
         <p
           onClick={() => {

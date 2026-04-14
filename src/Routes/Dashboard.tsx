@@ -78,7 +78,7 @@ export default function Dashboard() {
               </tr>
               <tr>
                 <td className="green not-completed">
-                  <button type="button" onClick={() => setshowfund(true)}>
+                  <button aria-label="add funds" type="button" onClick={() => setshowfund(true)}>
                     not completed &gt;
                   </button>
                 </td>
@@ -303,7 +303,7 @@ function FundAccount({
 
   return (
     <>
-      <div className="outer-fund-cover">
+      <div aria-label="funding block display" className="outer-fund-cover">
         <div ref={divContainer} className="outer-fund-container">
           <div className="fund-account">
             <p
