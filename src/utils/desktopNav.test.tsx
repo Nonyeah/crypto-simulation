@@ -4,7 +4,9 @@ import { describe, it, expect } from "vitest";
 import Layout from "../Layout/Layout";
 import Dashboard from "../Routes/Dashboard";
 import Balance from "../Routes/Balance";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
+import Markets from "../Routes/Markets";
+import { BrowserRouter } from "react-router-dom";
 
 describe("Desktop and mobile layout test", () => {
   it("renders desktop and mobile navigation menu", () => {
@@ -58,5 +60,60 @@ describe("Show balance banner crypto selection test", () => {
     await startEvent.click(button);
     const cryptopanel = screen.getByLabelText("crypto coin container");
     expect(cryptopanel).toBeInTheDocument();
+    const close = within(cryptopanel).getAllByRole("paragraph")[0];
+    await startEvent.click(close);
+    setTimeout(() => expect(cryptopanel).not.toBeInTheDocument(), 2000);
+  });
+});
+
+describe("Did main crypto table mount test", () => {
+  it("Confirms that the main crypto table mounts on the home page", () => {
+    render(
+      <BrowserRouter>
+        <Markets />
+      </BrowserRouter>,
+    );
+    const marketstable = screen.getByRole("rowgroup", {
+      name: /main crypto table/i,
+    });
+    expect(marketstable).toBeInTheDocument();
+  });
+});
+
+describe("Do the market top navigation buttons work test 1", () => {
+  it("Holding button shows text in container when clicked", async () => {
+    const startEvent = userEvent.setup();
+    render(
+      <BrowserRouter>
+        <Markets />
+      </BrowserRouter>,
+    );
+    const buttonlinks = screen.getByRole("list", { name: /market buttons/i });
+    const holdingButton = within(buttonlinks).getByRole("button", {
+      name: /holding/i,
+    });
+    await startEvent.click(holdingButton);
+    expect(
+      screen.getByText(/Holding coin prices will be displayed here/i),
+    ).toBeInTheDocument();
+  });
+});
+
+describe("Do the market top navigation buttons work test 2", () => {
+  it.only("shows crypto coin table when 'most traded' button is clicked", async() => {
+    const startEvent = userEvent.setup();
+    render(
+      <BrowserRouter>
+        <Markets />
+      </BrowserRouter>,
+    );
+    const list = screen.getByRole("list", { name: /market buttons/i });
+    const tradedButton = within(list).getByRole("button", {
+      name: /most traded/i,
+    });
+    await startEvent.click(tradedButton);
+    expect(
+      screen.getByRole("rowgroup", { name: /main crypto table/i }),
+    ).toBeInTheDocument();
   });
 });

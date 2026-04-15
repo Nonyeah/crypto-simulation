@@ -112,7 +112,7 @@ function CryptoTable({
         <thead>
           <tr>{header}</tr>
         </thead>
-        <tbody>{outputTable}</tbody>
+        <tbody aria-label="main crypto table">{outputTable}</tbody>
       </table>
     );
   } else {
@@ -249,7 +249,7 @@ export default function Markets() {
 
   const labelArray = navLabels.map((label) => (
     <li key={label.id}>
-      <button className={ label.id === active ? "active" : ""}
+      <button aria-label={label.name} className={ label.id === active ? "active" : ""}
         type="button"
         onClick={() => {
           displayTable(label.id);
@@ -273,7 +273,7 @@ export default function Markets() {
   return (
     <div className="markets-container">
       <h5>Markets</h5>
-      <ul className="buttons-container">{labelArray}</ul>
+      <ul aria-label="market buttons" className="buttons-container">{labelArray}</ul>
       <div className="markets-content">
         {" "}
         <CryptoTable

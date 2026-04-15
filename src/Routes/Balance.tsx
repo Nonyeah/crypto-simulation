@@ -206,7 +206,7 @@ function ShowBalance({
   ));
 
   return (
-    <div aria-label="crypto coin container" className="select-crypto-container">
+    <div role="region" aria-label="crypto coin container" className="select-crypto-container">
       <div ref={currencyRef} className="select-crypto">
         <p
           onClick={() => {
