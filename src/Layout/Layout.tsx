@@ -213,36 +213,3 @@ function DesktopTabMenu() {
   );
 }
 
-/*function NewTabMenu({ id, tabName, links }: NavObjects) {
-  const [isOpen, setIsOpen] = useState<IsOpenState>({
-    id: 10,
-    istabopen: false,
-  });
-
-  function displayTab(buttonId: number) {
-    if (!isOpen.istabopen) {
-      setIsOpen({ id: buttonId, istabopen: true });
-    } else {
-      setIsOpen({ id: buttonId, istabopen: false });
-    }
-  }
-
-  return (
-    <div key={id} className="bottomnav">
-      <button type="button" onClick={() => displayTab(id)}>
-        <span>{tabName}</span>
-      </button>
-      <div
-        className={isOpen.id === id && isOpen.istabopen ? "divshow" : "divhide"}
-      >
-        <p>
-          <ul>
-            {links.map((link) => (
-              <li key={id}>{link}</li>
-            ))}
-          </ul>
-        </p>
-      </div>
-    </div>
-  );
-} */

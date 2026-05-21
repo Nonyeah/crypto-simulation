@@ -44,7 +44,7 @@ function ChartHouse() {
 
   const topnav: ReactNode = chartHouseNav.map((label) => (
     <li key={label.id}>
-      <button
+      <button aria-label={label.name}
         className={label.id === active ? "active" : ""}
         onClick={() => selectTab(label.id)}
       >
@@ -57,7 +57,7 @@ function ChartHouse() {
     return (
       <>
         <div className="chart-nav">
-          <ul>{topnav}</ul>
+          <ul aria-label="line chart bnb">{topnav}</ul>
         </div>
         <div className="chart-outside-cover">
           <div className="line-chart-container">
@@ -70,7 +70,7 @@ function ChartHouse() {
     return (
       <>
         <div className="chart-nav">
-          <ul>{topnav}</ul>
+          <ul aria-label="chart info bnb">{topnav}</ul>
         </div>
         <div className="chart-outside-cover">
           <ChartInfo />

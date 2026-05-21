@@ -1,12 +1,12 @@
 import { render, screen, within } from "@testing-library/react";
-import "@testing-library/jest-dom";
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, test } from "vitest";
 import Layout from "../Layout/Layout";
 import Dashboard from "../Routes/Dashboard";
 import Balance from "../Routes/Balance";
 import { userEvent } from "@testing-library/user-event";
 import Markets from "../Routes/Markets";
 import { BrowserRouter } from "react-router-dom";
+import Bnb from "../Routes/Bnb";
 
 describe("Desktop and mobile layout test", () => {
   it("renders desktop and mobile navigation menu", () => {
@@ -27,12 +27,13 @@ describe("Desktop dropdown menu visibility test", () => {
     const outerList = screen.getByRole("navigation", {
       name: /desktop navigation/i,
     }); //ok
-    const hiddenList = within(outerList).getByRole("list", {
-      name: /buy crypto(?!via)/i,
-    });
     const targetList = within(outerList).getByRole("listitem", {
       name: /buy crypto(?!via)/i,
     });
+    const hiddenList = within(outerList).getByRole("list", {
+      name: /buy crypto(?!via)/i,
+    });
+
     expect(hiddenList).toHaveClass("hideinner");
     await startEvent.hover(targetList);
     expect(hiddenList).toHaveClass("showinner");
@@ -81,7 +82,7 @@ describe("Did main crypto table mount test", () => {
 });
 
 describe("Do the market top navigation buttons work test 1", () => {
-  it("Holding button shows text in container when clicked", async () => {
+  test("If Holding button shows text in container when clicked", async () => {
     const startEvent = userEvent.setup();
     render(
       <BrowserRouter>
@@ -100,7 +101,7 @@ describe("Do the market top navigation buttons work test 1", () => {
 });
 
 describe("Do the market top navigation buttons work test 2", () => {
-  it.only("shows crypto coin table when 'most traded' button is clicked", async() => {
+  it("shows crypto coin table when 'most traded' button is clicked", async () => {
     const startEvent = userEvent.setup();
     render(
       <BrowserRouter>
@@ -114,6 +115,36 @@ describe("Do the market top navigation buttons work test 2", () => {
     await startEvent.click(tradedButton);
     expect(
       screen.getByRole("rowgroup", { name: /main crypto table/i }),
+    ).toBeInTheDocument();
+  });
+});
+
+describe("Individual crypto coin pages test - BNB", () => {
+  it.only("If default crypto chart page is rendered when BNB page is loaded", () => {
+    render(
+      <BrowserRouter>
+        <Bnb />
+      </BrowserRouter>,
+    );
+    expect(
+      screen.getByRole("list", { name: /line chart bnb/i }),
+    ).toBeInTheDocument();
+  });
+});
+
+describe("Test for page content changes when top nav buttons are clicked", () => {
+  it.only("Tests whether the page content changes when the top navigation buttons are clicked", async () => {
+    const startEvent = userEvent.setup();
+    render(
+      <BrowserRouter>
+        <Bnb />
+      </BrowserRouter>,
+    );
+    const button = screen.getByRole("button", { name: /info/i });
+    await startEvent.click(button);
+
+    expect(
+      screen.getByRole("list", { name: /chart info bnb/i }),
     ).toBeInTheDocument();
   });
 });
